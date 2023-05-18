@@ -67,6 +67,10 @@ if __name__ == "__main__":
             'list_dir': '/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse',
             'num_classes': 9,
         },
+        'Polyp': {
+          'root_path': '',
+          
+        }
     }
     args.num_classes = dataset_config[dataset_name]['num_classes']
     args.root_path = dataset_config[dataset_name]['root_path']

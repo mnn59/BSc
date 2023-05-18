@@ -10,6 +10,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from datasets.dataset_synapse import Synapse_dataset
+from datasets.dataset_polyp import Polyp_dataset
 from utils import test_single_volume
 from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
@@ -91,6 +92,10 @@ if __name__ == "__main__":
             'num_classes': 9,
             'z_spacing': 1,
         },
+        'Polyp': {
+            'Dataset': Polyp_dataset,
+            
+        }
     }
     dataset_name = args.dataset
     args.num_classes = dataset_config[dataset_name]['num_classes']
