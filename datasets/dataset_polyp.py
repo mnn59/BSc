@@ -86,7 +86,7 @@
 #     test_df = metadata_df.sample(frac=0.1, random_state=42)
 #     train_df = metadata_df.drop(test_df.index)
 #     return train_df, test_df
-
+ 
 # def one_hot_encode(label, label_values):
 #     semantic_map = []
 #     for color in label_values:
