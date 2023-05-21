@@ -60,10 +60,8 @@ class Synapse_dataset(Dataset):
         if self.split == "train":
             slice_name = self.sample_list[idx].strip('\n')
             data_path = os.path.join(self.data_dir, slice_name+'.npz')
-            # print(data_path)
             data = np.load(data_path)
             image, label = data['image'], data['label']
-            # print(image.shape)
         else:
             vol_name = self.sample_list[idx].strip('\n')
             filepath = self.data_dir + "/{}.npy.h5".format(vol_name)

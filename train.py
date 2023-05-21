@@ -7,27 +7,34 @@ import torch
 import torch.backends.cudnn as cudnn
 from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
-from trainer import trainer_synapse
+# from trainer import trainer_synapse
+from trainer import trainer_polyp
 
 parser = argparse.ArgumentParser()
 # parser.add_argument('--root_path', type=str,
 #                     default='../data/Synapse/train_npz', help='root dir for data')
-parser.add_argument('--root_path', type=str,
-                    default='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/train_npz', help='root dir for data')
+# parser.add_argument('--root_path', type=str,
+#                     default='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/train_npz', help='root dir for data')
+parser.add_argument('--img_root', type=str,
+                    default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', help='root dir for data')
+parser.add_argument('--gt_root', type=str,
+                    default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', help='root dir for mask')
+# parser.add_argument('--dataset', type=str,
+#                     default='Synapse', help='experiment_name')
 parser.add_argument('--dataset', type=str,
-                    default='Synapse', help='experiment_name')
+                    default='Polyp', help='experiment_name')
 # parser.add_argument('--list_dir', type=str,
 #                     default='./lists/lists_Synapse', help='list dir')
 parser.add_argument('--list_dir', type=str,
                     default='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', help='list dir')
 parser.add_argument('--num_classes', type=int,
-                    default=9, help='output channel of network')
+                    default=2, help='output channel of network')
 parser.add_argument('--max_iterations', type=int,
                     default=30000, help='maximum epoch number to train')
 parser.add_argument('--max_epochs', type=int,
                     default=150, help='maximum epoch number to train')
 parser.add_argument('--batch_size', type=int,
-                    default=24, help='batch_size per gpu')
+                    default=16, help='batch_size per gpu')
 parser.add_argument('--n_gpu', type=int, default=1, help='total gpu')
 parser.add_argument('--deterministic', type=int,  default=1,
                     help='whether use deterministic training')
@@ -68,13 +75,16 @@ if __name__ == "__main__":
             'num_classes': 9,
         },
         'Polyp': {
-          'root_path': '',
-          
+          'img_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/',
+          'gt_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/',
+          'num_classes': 2,
         }
     }
     args.num_classes = dataset_config[dataset_name]['num_classes']
-    args.root_path = dataset_config[dataset_name]['root_path']
-    args.list_dir = dataset_config[dataset_name]['list_dir']
+    # args.root_path = dataset_config[dataset_name]['root_path']
+    args.img_root = dataset_config[dataset_name]['img_root']
+    args.gt_root = dataset_config[dataset_name]['gt_root']
+    # args.list_dir = dataset_config[dataset_name]['list_dir']
     args.is_pretrain = True
     args.exp = 'TU_' + dataset_name + str(args.img_size)
     # snapshot_path = "../model/{}/{}".format(args.exp, 'TU')
@@ -100,5 +110,5 @@ if __name__ == "__main__":
     net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
     net.load_from(weights=np.load(config_vit.pretrained_path))
 
-    trainer = {'Synapse': trainer_synapse,}
+    trainer = {'Polyp': trainer_polyp}
     trainer[dataset_name](args, net, snapshot_path)
