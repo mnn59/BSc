@@ -4,19 +4,27 @@ import os
 import random
 import sys
 import numpy as np
+import cv2
 import torch
 import torch.backends.cudnn as cudnn
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from tqdm import tqdm
+import SimpleITK as sitk
 # from datasets.dataset_synapse import Synapse_dataset
 from datasets.dataset_polyp import PolypDataset
-from utils import test_single_volume
+from utils import test_single_volume, calculate_metric_percase
 from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 from datasets.dataset_polyp import test_dataset, get_loader
 
 parser = argparse.ArgumentParser()
+
+parser.add_argument('--img_root', type=str,
+                    default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', help='root dir for data')
+parser.add_argument('--gt_root', type=str,
+                    default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', help='root dir for mask')
+
 # parser.add_argument('--volume_path', type=str,
 #                     default='../data/Synapse/test_vol_h5', help='root dir for validation volume data')  # for acdc volume_path=root_dir
 parser.add_argument('--volume_path', type=str,
@@ -58,16 +66,104 @@ def inference(args, model, test_save_path=None):
 
     logging.info("{} test iterations per epoch".format(len(testloader)))
     model.eval()
-    metric_list = 0.0
-    for i_batch, sampled_batch in tqdm(enumerate(testloader)):
+    metriclist = 0.0
+    for i_batch, sampled_batch in enumerate(tqdm(testloader)):
         # h, w = sampled_batch["image"].size()[2:]
-        image, label = sampled_batch[0], sampled_batch[1]
+        # image, label = sampled_batch[0], sampled_batch[1]
 
-        input = torch.from_numpy(image).unsqueeze(0).unsqueeze(0).float().cuda()
+        # image_batch, label_batch = sampled_batch[0], sampled_batch[1]
+        image_batch, label_batch = sampled_batch[0], sampled_batch[1]
+
+
+        # print(image)
+        # print(label)
+        # print(type(image))  # tensor
+        # input = torch.from_numpy(image).unsqueeze(0).unsqueeze(0).float().cuda()
+        # input = image.unsqueeze(0).unsqueeze(0).float().cuda()
+        # model.eval()
+
+        # print('input: ', input)
+        # print('input_shape', input.shape)
+        # print('input_type', type(input))
         model.eval()
+
         with torch.no_grad():
-            out = torch.argmax(torch.softmax(model(input), dim=1), dim=1).squeeze(0)
-            prediction = out.cpu().detach().numpy()
+            # prediction = torch.argmax(torch.softmax(model(image_batch), dim=1), dim=1)
+            # print("hereeeeee")
+            # prediction = torch.argmax(torch.softmax(model(image_batch.to(torch.device('cuda:0'))), dim=1), dim=1)
+            image_batch = image_batch.float().cuda()
+            # .detach().cpu().numpy()
+            prediction = torch.argmax(torch.softmax(model(image_batch), dim=1), dim=1)
+            # print(type(image_batch))
+            # print("gereeeeee")
+            # print(prediction.shape)
+        metric_list = []
+        for i in range(1, args.num_classes):
+            # metric_list.append(calculate_metric_percase(prediction.numpy() == i, label_batch.numpy() == i))
+            metric_list.append(calculate_metric_percase(prediction.detach().cpu().numpy() == i, label_batch.detach().cpu().numpy() == i))
+            # metric_list.append(calculate_metric_percase(prediction.numpy() == i, label_batch.numpy() == i))
+        
+        if test_save_path is not None:
+            # x.numpy().astype(np.float32)
+
+            img = image_batch.squeeze(0).permute(1,2,0).detach().cpu().numpy()
+            prd = prediction.permute(1,2,0).detach().cpu().numpy()
+            gt = label_batch.squeeze(0).permute(1,2,0).detach().cpu().numpy()
+            
+            # visualize(original_image=img,
+            #           mask_of_image=gt)
+
+            # img_itk = sitk.GetImageFromArray(image_batch.detach().cpu().numpy().astype(np.float32))
+            # prd_itk = sitk.GetImageFromArray(prediction.detach().cpu().numpy().astype(np.float32))
+            # lab_itk = sitk.GetImageFromArray(label_batch.detach().cpu().numpy().astype(np.float32))
+            # img_itk.SetSpacing((1, 1, 1))
+            # prd_itk.SetSpacing((1, 1, 1))
+            # lab_itk.SetSpacing((1, 1, 1))
+            # sitk.WriteImage(prd_itk, test_save_path + '/' + str(i_batch) + "_pred.nii.gz")
+            # sitk.WriteImage(img_itk, test_save_path + '/' + str(i_batch) + "_img.nii.gz")
+            # sitk.WriteImage(lab_itk, test_save_path + '/' + str(i_batch) + "_gt.nii.gz")
+
+
+
+            # this is test_save_path
+            # _path = f'/content/drive/MyDrive/MyTransunet/results/polyp' + '/' + str(i_batch) + '/'
+            
+
+            img_file = str(i_batch) + "_img.jpg"
+            prd_file = str(i_batch) + "_pred.jpg"
+            gt_file = str(i_batch) + "_gt.jpg"
+
+
+            os.makedirs(test_save_path + '/' + str(i_batch) + '/', exist_ok=True)
+
+            cv2.imwrite(test_save_path + '/' + str(i_batch) + '/' + img_file, cv2.cvtColor(img*255, cv2.COLOR_RGB2BGR))
+            cv2.imwrite(test_save_path + '/' + str(i_batch) + '/' + prd_file, prd*255)
+            cv2.imwrite(test_save_path + '/' + str(i_batch) + '/' + gt_file, gt*255)
+
+
+    
+    # print(metric_list)
+
+        metriclist += np.array(metric_list)
+        # logging.info('idx %d mean_dice %f mean_hd95 %f' % (i_batch, np.mean(metric_list, axis=0)[0], np.mean(metric_list, axis=0)[1]))
+        logging.info('idx %d mean_dice %f mean_jc %f' % (i_batch, np.mean(metric_list, axis=0)[0], np.mean(metric_list, axis=0)[1]))
+    
+    metriclist = metriclist / len(testloader)
+    # print(len(testloader))
+    for i in range(1, args.num_classes):
+        # logging.info('Mean class %d mean_dice %f mean_hd95 %f' % (i, metric_list[i-1][0], metric_list[i-1][1]))
+        logging.info('Mean class %d mean_dice %f mean_jc %f' % (i, metric_list[i-1][0], metric_list[i-1][1]))
+    
+    performance = np.mean(metriclist, axis=0)[0]
+    # mean_hd95 = np.mean(metriclist, axis=0)[1]
+    mean_jc = np.mean(metriclist, axis=0)[1]
+    # logging.info('Testing performance in best val model: mean_dice : %f mean_hd95 : %f' % (performance, mean_hd95))
+    logging.info('Testing performance in best val model: mean_dice : %f mean_jc : %f' % (performance, mean_jc))
+    
+
+
+
+
 
     #     metric_i = test_single_volume(image, label, model, classes=args.num_classes, patch_size=[args.img_size, args.img_size],
     #                                   test_save_path=test_save_path, case=case_name, z_spacing=args.z_spacing)
@@ -99,6 +195,20 @@ if __name__ == "__main__":
         'Polyp': {
           'Dataset': PolypDataset,
           'num_classes': 2,
+          'img_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/',
+          'gt_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/',
+        },
+        'Kvasir': {
+          'Dataset': PolypDataset,
+          'num_classes': 2,
+          'img_root': '/content/drive/MyDrive/datasets/Kvasir-SEG/images/',
+          'gt_root': '/content/drive/MyDrive/datasets/Kvasir-SEG/masks/',
+        },
+        'Ph2': {
+          'Dataset': PolypDataset,
+          'num_classes': 2,
+          'img_root': '/content/drive/MyDrive/datasets/ph2/trainx/',
+          'gt_root': '/content/drive/MyDrive/datasets/ph2/trainy/',
         }
     }
     dataset_name = args.dataset
@@ -107,6 +217,8 @@ if __name__ == "__main__":
     args.Dataset = dataset_config[dataset_name]['Dataset']
     # args.list_dir = dataset_config[dataset_name]['list_dir']
     # args.z_spacing = dataset_config[dataset_name]['z_spacing']
+    args.img_root = dataset_config[dataset_name]['img_root']
+    args.gt_root = dataset_config[dataset_name]['gt_root']
     args.is_pretrain = True
 
     # name the same snapshot defined in train script!
@@ -138,7 +250,13 @@ if __name__ == "__main__":
     if not os.path.exists(snapshot): snapshot = snapshot.replace('best_model', 'epoch_'+str(args.max_epochs-1))
 
     # new
-    snapshot = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/TU_Synapse224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224/epoch_149.pth'
+    # snapshot = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/TU_Synapse224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224/epoch_149.pth'
+    if dataset_name == 'Polyp':
+        snapshot = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/TU_Polyp224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs16_224/epoch_149.pth'
+    elif dataset_name == 'Kvasir':
+        snapshot = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/TU_Kvasir224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs16_224/epoch_149.pth'
+    elif dataset_name == 'Ph2':
+        snapshot = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/TU_Ph2224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs16_224/epoch_149.pth'
 
     net.load_state_dict(torch.load(snapshot))
     snapshot_name = snapshot_path.split('/')[-1]
@@ -153,10 +271,17 @@ if __name__ == "__main__":
 
     # if args.is_savenii:
     if args.is_save:
+        print("inja")
         # args.test_save_dir = '../predictions'
-        args.test_save_dir = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions'
-        test_save_path = os.path.join(args.test_save_dir, args.exp, snapshot_name)
-        os.makedirs(test_save_path, exist_ok=True)
+        # args.test_save_dir = '/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions'
+        # test_save_path = os.path.join(args.test_save_dir, args.exp, snapshot_name)
+        # os.makedirs(test_save_path, exist_ok=True)
+        if dataset_name == 'Polyp':
+            test_save_path = f'/content/drive/MyDrive/MyTransunet/results/polyp'
+        elif dataset_name == 'Kvasir':
+            test_save_path = f'/content/drive/MyDrive/MyTransunet/results/kvasir'
+        elif dataset_name == 'Ph2':
+            test_save_path = f'/content/drive/MyDrive/MyTransunet/results/ph2'
     else:
         test_save_path = None
     inference(args, net, test_save_path)

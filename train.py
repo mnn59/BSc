@@ -78,6 +78,16 @@ if __name__ == "__main__":
           'img_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/',
           'gt_root': '/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/',
           'num_classes': 2,
+        },
+        'Kvasir': {
+          'img_root': '/content/drive/MyDrive/datasets/Kvasir-SEG/images/',
+          'gt_root': '/content/drive/MyDrive/datasets/Kvasir-SEG/masks/',
+          'num_classes': 2,
+        }, 
+        'Ph2': {
+          'img_root': '/content/drive/MyDrive/datasets/ph2/trainx/',
+          'gt_root': '/content/drive/MyDrive/datasets/ph2/trainy/',
+          'num_classes': 2,
         }
     }
     args.num_classes = dataset_config[dataset_name]['num_classes']
@@ -110,5 +120,5 @@ if __name__ == "__main__":
     net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
     net.load_from(weights=np.load(config_vit.pretrained_path))
 
-    trainer = {'Polyp': trainer_polyp}
+    trainer = {'Polyp': trainer_polyp, 'Kvasir': trainer_polyp, 'Ph2': trainer_polyp}
     trainer[dataset_name](args, net, snapshot_path)

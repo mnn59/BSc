@@ -141,7 +141,7 @@ class ResNetV2(nn.Module):
 
     def forward(self, x):
         features = []
-        b, c, in_size, _ = x.size()
+        b, c, in_size, _ = x.size()  # ex: torch.Size([1, 3, 224, 224]) batchsize, channel, imagesize, imagesize
         x = self.root(x)
         features.append(x)
         x = nn.MaxPool2d(kernel_size=3, stride=2, padding=0)(x)

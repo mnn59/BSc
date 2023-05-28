@@ -383,8 +383,9 @@ class VisionTransformer(nn.Module):
         self.config = config
 
     def forward(self, x):
+        # print(x)
         if x.size()[1] == 1:
-            x = x.repeat(1,3,1,1)
+            x = x.repeat(1,3,1,1)  # like: torch.Size([1, 3, 224, 224])
         x, attn_weights, features = self.transformer(x)  # (B, n_patch, hidden)
         x = self.decoder(x, features)
         logits = self.segmentation_head(x)

@@ -12,7 +12,7 @@ from tensorboardX import SummaryWriter
 from torch.nn.modules.loss import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from utils import DiceLoss
+from utils import DiceLoss, IoULoss
 from torchvision import transforms
 
 
@@ -50,13 +50,14 @@ def trainer_polyp(args, model, snapshot_path):
     model.train()
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes)
+    iou_loss = IoULoss(num_classes)
     optimizer = optim.SGD(model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001)
     writer = SummaryWriter(snapshot_path + '/log')
     iter_num = 0
     max_epoch = args.max_epochs
     max_iterations = args.max_epochs * len(trainloader)  # max_epoch = max_iterations // len(trainloader) + 1
     logging.info("{} iterations per epoch. {} max iterations ".format(len(trainloader), max_iterations))
-    best_performance = 0.0
+    best_performance = 0.0  # not used any where
     iterator = tqdm(range(max_epoch), ncols=70)
     for epoch_num in iterator:
         for i_batch, sampled_batch in enumerate(trainloader):
@@ -65,6 +66,9 @@ def trainer_polyp(args, model, snapshot_path):
             outputs = model(image_batch)
 
             # print(outputs.size())
+            # print('image_batch: ', image_batch)                   # torch.Size([16, 3, 224, 224])
+            # print('image_batch_size: ', image_batch.shape)
+            # print('image_batch_type: ', type(image_batch))
 
 
 
@@ -72,8 +76,10 @@ def trainer_polyp(args, model, snapshot_path):
             # print("ok")
             loss_dice = dice_loss(np.squeeze(outputs), np.squeeze(label_batch.long()), softmax=True)
             # print("ok 2")
+            loss_iou = iou_loss(np.squeeze(outputs), np.squeeze(label_batch.long()), softmax=True)
 
-            loss = 0.5 * loss_ce + 0.5 * loss_dice
+            # loss = 0.5 * loss_ce + 0.5 * loss_dice
+            loss = 0.33 * loss_ce + 0.33 * loss_dice + 0.33 * loss_iou  # (this is new line of code)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -85,19 +91,28 @@ def trainer_polyp(args, model, snapshot_path):
             writer.add_scalar('info/lr', lr_, iter_num)
             writer.add_scalar('info/total_loss', loss, iter_num)
             writer.add_scalar('info/loss_ce', loss_ce, iter_num)
+            writer.add_scalar('info/loss_iou', loss_iou, iter_num)
 
-            logging.info('iteration %d : loss : %f, loss_ce: %f' % (iter_num, loss.item(), loss_ce.item()))
+            logging.info('iteration %d : loss : %f, loss_ce: %f loss_iou: %f' % (iter_num, loss.item(), loss_ce.item(), loss_iou.item()))
 
-            # if iter_num % 20 == 0:
-            #     image = image_batch[1, 0:1, :, :]
-            #     image = (image - image.min()) / (image.max() - image.min())
-            #     writer.add_image('train/Image', image, iter_num)
-            #     outputs = torch.argmax(torch.softmax(outputs, dim=1), dim=1, keepdim=True)
-            #     writer.add_image('train/Prediction', outputs[1, ...] * 50, iter_num)
-            #     print("here")
-            #     labs = label_batch[1, ...].unsqueeze(0) * 50
-            #     print("after")
-            #     writer.add_image('train/GroundTruth', labs, iter_num)
+            if iter_num % 20 == 0:
+                # debug
+                # print(image_batch.shape)  # ([16, 3, 224, 224])
+                # print(image_batch[0].shape)
+                # image = image_batch[1, 0:1, :, :]
+                # image_batch.squeeze(0).permute(1,2,0).detach().cpu().numpy()
+                # image = torch.squeeze(image_batch, dim=0)
+                # print(image.shape)
+                image = image_batch[1, :, :]
+
+                image = (image - image.min()) / (image.max() - image.min())
+                writer.add_image('train/Image', image, iter_num)
+                outputs = torch.argmax(torch.softmax(outputs, dim=1), dim=1, keepdim=True)
+                writer.add_image('train/Prediction', outputs[1, ...] * 50, iter_num)
+                # print("here")
+                labs = label_batch[1, ...] * 50
+                # print("after")
+                writer.add_image('train/GroundTruth', labs, iter_num)
 
         save_interval = 50  # int(max_epoch/6)
         if epoch_num > int(max_epoch / 2) and (epoch_num + 1) % save_interval == 0:

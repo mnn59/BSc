@@ -1,0 +1,616 @@
+[05:03:16.281] Namespace(volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[05:03:16.282] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[05:05:01.941] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[05:05:01.942] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[05:11:55.591] 123 test iterations per epoch
+[05:13:32.570] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[05:13:32.571] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[05:13:34.159] 123 test iterations per epoch
+[06:40:45.457] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[06:40:45.693] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[06:43:35.084] 123 test iterations per epoch
+[06:45:20.242] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[06:45:20.243] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[06:45:21.881] 123 test iterations per epoch
+[12:10:55.830] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:10:56.098] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:13:45.777] 123 test iterations per epoch
+[12:18:00.950] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:18:00.953] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:18:05.491] 123 test iterations per epoch
+[12:18:57.055] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:18:57.056] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:19:06.188] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:19:06.189] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:19:07.615] 123 test iterations per epoch
+[12:21:55.402] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:21:55.403] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:21:56.980] 123 test iterations per epoch
+[12:34:05.431] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:34:05.443] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:34:07.101] 123 test iterations per epoch
+[12:52:59.798] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:52:59.799] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:53:01.551] 123 test iterations per epoch
+[12:57:04.677] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:57:04.678] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:57:06.211] 123 test iterations per epoch
+[12:59:44.090] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[12:59:44.091] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[12:59:45.657] 123 test iterations per epoch
+[13:01:44.633] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:01:44.634] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:01:46.197] 123 test iterations per epoch
+[13:04:55.110] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:04:55.111] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:04:56.706] 123 test iterations per epoch
+[13:05:52.352] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:05:52.353] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:05:53.645] 123 test iterations per epoch
+[13:06:47.723] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:06:47.724] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:06:49.020] 123 test iterations per epoch
+[13:08:45.857] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:08:45.858] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:08:47.399] 123 test iterations per epoch
+[13:12:36.727] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[13:12:36.728] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[13:12:38.436] 123 test iterations per epoch
+[06:59:28.083] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[06:59:28.530] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[07:04:52.031] 123 test iterations per epoch
+[07:46:56.525] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[07:46:56.526] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[07:46:58.140] 123 test iterations per epoch
+[07:48:43.633] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[07:48:43.634] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[07:48:44.914] 123 test iterations per epoch
+[08:10:54.298] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:10:54.299] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:10:55.866] 123 test iterations per epoch
+[08:11:25.942] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:11:25.944] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:11:27.236] 123 test iterations per epoch
+[08:12:18.186] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:12:18.187] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:12:19.450] 123 test iterations per epoch
+[08:16:06.515] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:16:06.516] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:16:08.079] 123 test iterations per epoch
+[08:17:12.835] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:17:12.836] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:17:14.161] 123 test iterations per epoch
+[08:21:03.149] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:21:03.151] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:21:04.808] 123 test iterations per epoch
+[08:24:07.294] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:24:07.295] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:24:08.782] 123 test iterations per epoch
+[08:28:38.388] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:28:38.389] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:28:39.981] 123 test iterations per epoch
+[08:32:53.818] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:32:53.819] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:32:55.377] 123 test iterations per epoch
+[08:32:55.998] idx 0 mean_dice 0.939604 mean_jc 0.886088
+[08:32:56.056] idx 1 mean_dice 0.701847 mean_jc 0.540650
+[08:32:56.113] idx 2 mean_dice 0.686203 mean_jc 0.522305
+[08:32:56.163] idx 3 mean_dice 0.759142 mean_jc 0.611789
+[08:32:56.208] idx 4 mean_dice 0.847156 mean_jc 0.734839
+[08:32:56.254] idx 5 mean_dice 0.239360 mean_jc 0.135951
+[08:32:56.304] idx 6 mean_dice 0.921588 mean_jc 0.854579
+[08:32:56.348] idx 7 mean_dice 0.960530 mean_jc 0.924058
+[08:32:56.387] idx 8 mean_dice 0.817859 mean_jc 0.691845
+[08:32:56.426] idx 9 mean_dice 0.636437 mean_jc 0.466746
+[08:32:56.464] idx 10 mean_dice 0.982690 mean_jc 0.965970
+[08:32:56.508] idx 11 mean_dice 0.643288 mean_jc 0.474152
+[08:32:56.547] idx 12 mean_dice 0.816605 mean_jc 0.690053
+[08:32:56.596] idx 13 mean_dice 0.559833 mean_jc 0.388728
+[08:32:56.633] idx 14 mean_dice 0.941644 mean_jc 0.889724
+[08:32:56.671] idx 15 mean_dice 0.822054 mean_jc 0.697871
+[08:32:56.716] idx 16 mean_dice 0.940276 mean_jc 0.887283
+[08:32:56.764] idx 17 mean_dice 0.813039 mean_jc 0.684976
+[08:32:56.809] idx 18 mean_dice 0.961816 mean_jc 0.926441
+[08:32:56.848] idx 19 mean_dice 0.691301 mean_jc 0.528235
+[08:32:56.886] idx 20 mean_dice 0.504973 mean_jc 0.337768
+[08:32:56.924] idx 21 mean_dice 0.938858 mean_jc 0.884762
+[08:32:56.967] idx 22 mean_dice 0.745115 mean_jc 0.593772
+[08:32:57.016] idx 23 mean_dice 0.744735 mean_jc 0.593289
+[08:32:57.055] idx 24 mean_dice 0.399193 mean_jc 0.249369
+[08:32:57.096] idx 25 mean_dice 0.916708 mean_jc 0.846224
+[08:32:57.136] idx 26 mean_dice 0.905345 mean_jc 0.827059
+[08:32:57.175] idx 27 mean_dice 0.958188 mean_jc 0.919732
+[08:32:57.214] idx 28 mean_dice 0.906571 mean_jc 0.829108
+[08:32:57.255] idx 29 mean_dice 0.897655 mean_jc 0.814313
+[08:32:57.299] idx 30 mean_dice 0.743736 mean_jc 0.592022
+[08:32:57.337] idx 31 mean_dice 0.551886 mean_jc 0.381106
+[08:32:57.378] idx 32 mean_dice 0.758727 mean_jc 0.611248
+[08:32:57.423] idx 33 mean_dice 0.000000 mean_jc 0.000000
+[08:32:57.462] idx 34 mean_dice 0.274254 mean_jc 0.158919
+[08:32:57.506] idx 35 mean_dice 0.921336 mean_jc 0.854145
+[08:32:57.545] idx 36 mean_dice 0.894596 mean_jc 0.809293
+[08:32:57.585] idx 37 mean_dice 0.952260 mean_jc 0.908871
+[08:32:57.631] idx 38 mean_dice 0.863555 mean_jc 0.759874
+[08:32:57.669] idx 39 mean_dice 0.890562 mean_jc 0.802715
+[08:32:57.708] idx 40 mean_dice 0.681851 mean_jc 0.517279
+[08:32:57.748] idx 41 mean_dice 0.959448 mean_jc 0.922057
+[08:32:57.796] idx 42 mean_dice 0.931134 mean_jc 0.871141
+[08:32:57.839] idx 43 mean_dice 0.858870 mean_jc 0.752648
+[08:32:57.878] idx 44 mean_dice 0.706062 mean_jc 0.545669
+[08:32:57.915] idx 45 mean_dice 0.783317 mean_jc 0.643813
+[08:32:57.955] idx 46 mean_dice 0.842951 mean_jc 0.728535
+[08:32:57.999] idx 47 mean_dice 0.900148 mean_jc 0.818426
+[08:32:58.039] idx 48 mean_dice 0.773459 mean_jc 0.630602
+[08:32:58.077] idx 49 mean_dice 0.895495 mean_jc 0.810767
+[08:32:58.124] idx 50 mean_dice 0.791454 mean_jc 0.654881
+[08:32:58.163] idx 51 mean_dice 0.918750 mean_jc 0.849711
+[08:32:58.201] idx 52 mean_dice 0.925926 mean_jc 0.862069
+[08:32:58.238] idx 53 mean_dice 0.925652 mean_jc 0.861595
+[08:32:58.282] idx 54 mean_dice 0.874491 mean_jc 0.776973
+[08:32:58.325] idx 55 mean_dice 0.957062 mean_jc 0.917659
+[08:32:58.363] idx 56 mean_dice 0.911553 mean_jc 0.837481
+[08:32:58.399] idx 57 mean_dice 0.728571 mean_jc 0.573034
+[08:32:58.437] idx 58 mean_dice 0.655571 mean_jc 0.487620
+[08:32:58.477] idx 59 mean_dice 0.804450 mean_jc 0.672870
+[08:32:58.515] idx 60 mean_dice 0.910005 mean_jc 0.834870
+[08:32:58.554] idx 61 mean_dice 0.672326 mean_jc 0.506394
+[08:32:58.597] idx 62 mean_dice 0.870888 mean_jc 0.771304
+[08:32:58.653] idx 63 mean_dice 0.837529 mean_jc 0.720472
+[08:32:58.698] idx 64 mean_dice 0.861180 mean_jc 0.756204
+[08:32:58.751] idx 65 mean_dice 0.895357 mean_jc 0.810540
+[08:32:58.799] idx 66 mean_dice 0.917757 mean_jc 0.848014
+[08:32:58.837] idx 67 mean_dice 0.632401 mean_jc 0.462417
+[08:32:58.875] idx 68 mean_dice 0.886322 mean_jc 0.795852
+[08:32:58.913] idx 69 mean_dice 0.978151 mean_jc 0.957236
+[08:32:58.954] idx 70 mean_dice 0.908803 mean_jc 0.832849
+[08:32:58.991] idx 71 mean_dice 0.963470 mean_jc 0.929515
+[08:32:59.030] idx 72 mean_dice 0.711298 mean_jc 0.551949
+[08:32:59.069] idx 73 mean_dice 0.955758 mean_jc 0.915264
+[08:32:59.116] idx 74 mean_dice 0.858031 mean_jc 0.751361
+[08:32:59.172] idx 75 mean_dice 0.905405 mean_jc 0.827160
+[08:32:59.225] idx 76 mean_dice 0.893905 mean_jc 0.808163
+[08:32:59.283] idx 77 mean_dice 0.845336 mean_jc 0.732106
+[08:32:59.333] idx 78 mean_dice 0.465675 mean_jc 0.303505
+[08:32:59.392] idx 79 mean_dice 0.644838 mean_jc 0.475838
+[08:32:59.438] idx 80 mean_dice 0.927870 mean_jc 0.865446
+[08:32:59.499] idx 81 mean_dice 0.874349 mean_jc 0.776750
+[08:32:59.566] idx 82 mean_dice 0.395062 mean_jc 0.246154
+[08:32:59.618] idx 83 mean_dice 0.934373 mean_jc 0.876830
+[08:32:59.672] idx 84 mean_dice 0.826995 mean_jc 0.705022
+[08:32:59.730] idx 85 mean_dice 0.000000 mean_jc 0.000000
+[08:32:59.778] idx 86 mean_dice 0.784242 mean_jc 0.645064
+[08:32:59.838] idx 87 mean_dice 0.678750 mean_jc 0.513718
+[08:32:59.893] idx 88 mean_dice 0.922056 mean_jc 0.855383
+[08:32:59.949] idx 89 mean_dice 0.843170 mean_jc 0.728863
+[08:33:00.003] idx 90 mean_dice 0.937650 mean_jc 0.882619
+[08:33:00.057] idx 91 mean_dice 0.911462 mean_jc 0.837328
+[08:33:00.113] idx 92 mean_dice 0.240099 mean_jc 0.136427
+[08:33:00.186] idx 93 mean_dice 0.787905 mean_jc 0.650036
+[08:33:00.235] idx 94 mean_dice 0.946518 mean_jc 0.898466
+[08:33:00.292] idx 95 mean_dice 0.739489 mean_jc 0.586657
+[08:33:00.348] idx 96 mean_dice 0.929843 mean_jc 0.868884
+[08:33:00.404] idx 97 mean_dice 0.000000 mean_jc 0.000000
+[08:33:00.457] idx 98 mean_dice 0.699205 mean_jc 0.537522
+[08:33:00.517] idx 99 mean_dice 0.954272 mean_jc 0.912544
+[08:33:00.573] idx 100 mean_dice 0.935733 mean_jc 0.879227
+[08:33:00.630] idx 101 mean_dice 0.966408 mean_jc 0.935000
+[08:33:00.687] idx 102 mean_dice 0.656961 mean_jc 0.489160
+[08:33:00.761] idx 103 mean_dice 0.907375 mean_jc 0.830454
+[08:33:00.822] idx 104 mean_dice 0.801147 mean_jc 0.668261
+[08:33:00.885] idx 105 mean_dice 0.929150 mean_jc 0.867676
+[08:33:00.939] idx 106 mean_dice 0.969359 mean_jc 0.940541
+[08:33:00.996] idx 107 mean_dice 0.970833 mean_jc 0.943320
+[08:33:01.077] idx 108 mean_dice 0.817180 mean_jc 0.690874
+[08:33:01.144] idx 109 mean_dice 0.561719 mean_jc 0.390549
+[08:33:01.199] idx 110 mean_dice 0.274914 mean_jc 0.159363
+[08:33:01.256] idx 111 mean_dice 0.881974 mean_jc 0.788868
+[08:33:01.315] idx 112 mean_dice 0.716216 mean_jc 0.557895
+[08:33:01.375] idx 113 mean_dice 0.843541 mean_jc 0.729417
+[08:33:01.439] idx 114 mean_dice 0.830805 mean_jc 0.710579
+[08:33:01.480] idx 115 mean_dice 0.880756 mean_jc 0.786920
+[08:33:01.520] idx 116 mean_dice 0.581020 mean_jc 0.409463
+[08:33:01.559] idx 117 mean_dice 0.929956 mean_jc 0.869082
+[08:33:01.598] idx 118 mean_dice 0.819277 mean_jc 0.693878
+[08:33:01.643] idx 119 mean_dice 0.915430 mean_jc 0.844048
+[08:45:21.601] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=False, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:45:21.602] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:45:23.203] 123 test iterations per epoch
+[08:45:23.838] idx 0 mean_dice 0.939604 mean_jc 0.886088
+[08:45:23.895] idx 1 mean_dice 0.701847 mean_jc 0.540650
+[08:45:23.949] idx 2 mean_dice 0.686203 mean_jc 0.522305
+[08:45:24.008] idx 3 mean_dice 0.759142 mean_jc 0.611789
+[08:45:24.061] idx 4 mean_dice 0.847156 mean_jc 0.734839
+[08:45:24.103] idx 5 mean_dice 0.239360 mean_jc 0.135951
+[08:45:24.146] idx 6 mean_dice 0.921588 mean_jc 0.854579
+[08:45:24.187] idx 7 mean_dice 0.960530 mean_jc 0.924058
+[08:45:24.228] idx 8 mean_dice 0.817859 mean_jc 0.691845
+[08:45:24.267] idx 9 mean_dice 0.636437 mean_jc 0.466746
+[08:45:24.305] idx 10 mean_dice 0.982690 mean_jc 0.965970
+[08:45:24.342] idx 11 mean_dice 0.643288 mean_jc 0.474152
+[08:45:24.380] idx 12 mean_dice 0.816605 mean_jc 0.690053
+[08:45:24.420] idx 13 mean_dice 0.559833 mean_jc 0.388728
+[08:45:24.459] idx 14 mean_dice 0.941644 mean_jc 0.889724
+[08:45:24.497] idx 15 mean_dice 0.822054 mean_jc 0.697871
+[08:45:24.539] idx 16 mean_dice 0.940276 mean_jc 0.887283
+[08:45:24.577] idx 17 mean_dice 0.813039 mean_jc 0.684976
+[08:45:24.629] idx 18 mean_dice 0.961816 mean_jc 0.926441
+[08:45:24.668] idx 19 mean_dice 0.691301 mean_jc 0.528235
+[08:45:24.706] idx 20 mean_dice 0.504973 mean_jc 0.337768
+[08:45:24.743] idx 21 mean_dice 0.938858 mean_jc 0.884762
+[08:45:24.780] idx 22 mean_dice 0.745115 mean_jc 0.593772
+[08:45:24.823] idx 23 mean_dice 0.744735 mean_jc 0.593289
+[08:45:24.862] idx 24 mean_dice 0.399193 mean_jc 0.249369
+[08:45:24.899] idx 25 mean_dice 0.916708 mean_jc 0.846224
+[08:45:24.936] idx 26 mean_dice 0.905345 mean_jc 0.827059
+[08:45:24.973] idx 27 mean_dice 0.958188 mean_jc 0.919732
+[08:45:25.015] idx 28 mean_dice 0.906571 mean_jc 0.829108
+[08:45:25.068] idx 29 mean_dice 0.897655 mean_jc 0.814313
+[08:45:25.105] idx 30 mean_dice 0.743736 mean_jc 0.592022
+[08:45:25.148] idx 31 mean_dice 0.551886 mean_jc 0.381106
+[08:45:25.185] idx 32 mean_dice 0.758727 mean_jc 0.611248
+[08:45:25.222] idx 33 mean_dice 0.000000 mean_jc 0.000000
+[08:45:25.260] idx 34 mean_dice 0.274254 mean_jc 0.158919
+[08:45:25.297] idx 35 mean_dice 0.921336 mean_jc 0.854145
+[08:45:25.340] idx 36 mean_dice 0.894596 mean_jc 0.809293
+[08:45:25.379] idx 37 mean_dice 0.952260 mean_jc 0.908871
+[08:45:25.416] idx 38 mean_dice 0.863555 mean_jc 0.759874
+[08:45:25.453] idx 39 mean_dice 0.890562 mean_jc 0.802715
+[08:45:25.494] idx 40 mean_dice 0.681851 mean_jc 0.517279
+[08:45:25.536] idx 41 mean_dice 0.959448 mean_jc 0.922057
+[08:45:25.574] idx 42 mean_dice 0.931134 mean_jc 0.871141
+[08:45:25.613] idx 43 mean_dice 0.858870 mean_jc 0.752648
+[08:45:25.664] idx 44 mean_dice 0.706062 mean_jc 0.545669
+[08:45:25.710] idx 45 mean_dice 0.783317 mean_jc 0.643813
+[08:45:25.748] idx 46 mean_dice 0.842951 mean_jc 0.728535
+[08:45:25.785] idx 47 mean_dice 0.900148 mean_jc 0.818426
+[08:45:25.823] idx 48 mean_dice 0.773459 mean_jc 0.630602
+[08:45:25.861] idx 49 mean_dice 0.895495 mean_jc 0.810767
+[08:45:25.899] idx 50 mean_dice 0.791454 mean_jc 0.654881
+[08:45:25.941] idx 51 mean_dice 0.918750 mean_jc 0.849711
+[08:45:25.980] idx 52 mean_dice 0.925926 mean_jc 0.862069
+[08:45:26.017] idx 53 mean_dice 0.925652 mean_jc 0.861595
+[08:45:26.054] idx 54 mean_dice 0.874491 mean_jc 0.776973
+[08:45:26.095] idx 55 mean_dice 0.957062 mean_jc 0.917659
+[08:45:26.134] idx 56 mean_dice 0.911553 mean_jc 0.837481
+[08:45:26.170] idx 57 mean_dice 0.728571 mean_jc 0.573034
+[08:45:26.207] idx 58 mean_dice 0.655571 mean_jc 0.487620
+[08:45:26.250] idx 59 mean_dice 0.804450 mean_jc 0.672870
+[08:45:26.290] idx 60 mean_dice 0.910005 mean_jc 0.834870
+[08:45:26.329] idx 61 mean_dice 0.672326 mean_jc 0.506394
+[08:45:26.365] idx 62 mean_dice 0.870888 mean_jc 0.771304
+[08:45:26.403] idx 63 mean_dice 0.837529 mean_jc 0.720472
+[08:45:26.440] idx 64 mean_dice 0.861180 mean_jc 0.756204
+[08:45:26.478] idx 65 mean_dice 0.895357 mean_jc 0.810540
+[08:45:26.518] idx 66 mean_dice 0.917757 mean_jc 0.848014
+[08:45:26.561] idx 67 mean_dice 0.632401 mean_jc 0.462417
+[08:45:26.601] idx 68 mean_dice 0.886322 mean_jc 0.795852
+[08:45:26.639] idx 69 mean_dice 0.978151 mean_jc 0.957236
+[08:45:26.685] idx 70 mean_dice 0.908803 mean_jc 0.832849
+[08:45:26.730] idx 71 mean_dice 0.963470 mean_jc 0.929515
+[08:45:26.772] idx 72 mean_dice 0.711298 mean_jc 0.551949
+[08:45:26.812] idx 73 mean_dice 0.955758 mean_jc 0.915264
+[08:45:26.850] idx 74 mean_dice 0.858031 mean_jc 0.751361
+[08:45:26.888] idx 75 mean_dice 0.905405 mean_jc 0.827160
+[08:45:26.926] idx 76 mean_dice 0.893905 mean_jc 0.808163
+[08:45:26.966] idx 77 mean_dice 0.845336 mean_jc 0.732106
+[08:45:27.003] idx 78 mean_dice 0.465675 mean_jc 0.303505
+[08:45:27.045] idx 79 mean_dice 0.644838 mean_jc 0.475838
+[08:45:27.082] idx 80 mean_dice 0.927870 mean_jc 0.865446
+[08:45:27.119] idx 81 mean_dice 0.874349 mean_jc 0.776750
+[08:45:27.157] idx 82 mean_dice 0.395062 mean_jc 0.246154
+[08:45:27.194] idx 83 mean_dice 0.934373 mean_jc 0.876830
+[08:45:27.232] idx 84 mean_dice 0.826995 mean_jc 0.705022
+[08:45:27.274] idx 85 mean_dice 0.000000 mean_jc 0.000000
+[08:45:27.315] idx 86 mean_dice 0.784242 mean_jc 0.645064
+[08:45:27.353] idx 87 mean_dice 0.678750 mean_jc 0.513718
+[08:45:27.389] idx 88 mean_dice 0.922056 mean_jc 0.855383
+[08:45:27.426] idx 89 mean_dice 0.843170 mean_jc 0.728863
+[08:45:27.472] idx 90 mean_dice 0.937650 mean_jc 0.882619
+[08:45:27.517] idx 91 mean_dice 0.911462 mean_jc 0.837328
+[08:45:27.555] idx 92 mean_dice 0.240099 mean_jc 0.136427
+[08:45:27.593] idx 93 mean_dice 0.787905 mean_jc 0.650036
+[08:45:27.632] idx 94 mean_dice 0.946518 mean_jc 0.898466
+[08:45:27.671] idx 95 mean_dice 0.739489 mean_jc 0.586657
+[08:45:27.719] idx 96 mean_dice 0.929843 mean_jc 0.868884
+[08:45:27.763] idx 97 mean_dice 0.000000 mean_jc 0.000000
+[08:45:27.805] idx 98 mean_dice 0.699205 mean_jc 0.537522
+[08:45:27.843] idx 99 mean_dice 0.954272 mean_jc 0.912544
+[08:45:27.881] idx 100 mean_dice 0.935733 mean_jc 0.879227
+[08:45:27.919] idx 101 mean_dice 0.966408 mean_jc 0.935000
+[08:45:27.957] idx 102 mean_dice 0.656961 mean_jc 0.489160
+[08:45:27.993] idx 103 mean_dice 0.907375 mean_jc 0.830454
+[08:45:28.030] idx 104 mean_dice 0.801147 mean_jc 0.668261
+[08:45:28.074] idx 105 mean_dice 0.929150 mean_jc 0.867676
+[08:45:28.114] idx 106 mean_dice 0.969359 mean_jc 0.940541
+[08:45:28.152] idx 107 mean_dice 0.970833 mean_jc 0.943320
+[08:45:28.195] idx 108 mean_dice 0.817180 mean_jc 0.690874
+[08:45:28.231] idx 109 mean_dice 0.561719 mean_jc 0.390549
+[08:45:28.277] idx 110 mean_dice 0.274914 mean_jc 0.159363
+[08:45:28.317] idx 111 mean_dice 0.881974 mean_jc 0.788868
+[08:45:28.356] idx 112 mean_dice 0.716216 mean_jc 0.557895
+[08:45:28.393] idx 113 mean_dice 0.843541 mean_jc 0.729417
+[08:45:28.430] idx 114 mean_dice 0.830805 mean_jc 0.710579
+[08:45:28.462] idx 115 mean_dice 0.880756 mean_jc 0.786920
+[08:45:28.492] idx 116 mean_dice 0.581020 mean_jc 0.409463
+[08:45:28.525] idx 117 mean_dice 0.929956 mean_jc 0.869082
+[08:45:28.559] idx 118 mean_dice 0.819277 mean_jc 0.693878
+[08:45:28.597] idx 119 mean_dice 0.915430 mean_jc 0.844048
+[08:45:28.628] idx 120 mean_dice 0.972727 mean_jc 0.946903
+[08:45:28.658] idx 121 mean_dice 0.665800 mean_jc 0.499025
+[08:45:28.689] idx 122 mean_dice 0.871050 mean_jc 0.771558
+[08:45:28.748] Mean class 1 mean_dice 0.871050 mean_jc 0.771558
+[08:45:28.749] Testing performance in best val model: mean_dice : 0.787998 mean_hd95 : 0.687215
+[08:46:33.541] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:46:33.542] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:46:34.829] 123 test iterations per epoch
+[08:52:25.768] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:52:25.768] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:52:27.302] 123 test iterations per epoch
+[08:53:17.174] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:53:17.175] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:53:18.470] 123 test iterations per epoch
+[08:54:06.072] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:54:06.073] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:54:07.395] 123 test iterations per epoch
+[08:54:44.290] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[08:54:44.291] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[08:54:45.881] 123 test iterations per epoch
+[09:04:07.899] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[09:04:07.900] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[09:04:09.409] 123 test iterations per epoch
+[09:04:10.060] idx 0 mean_dice 0.939604 mean_jc 0.886088
+[09:04:10.148] idx 1 mean_dice 0.701847 mean_jc 0.540650
+[09:04:10.250] idx 2 mean_dice 0.686203 mean_jc 0.522305
+[09:04:10.332] idx 3 mean_dice 0.759142 mean_jc 0.611789
+[09:04:10.419] idx 4 mean_dice 0.847156 mean_jc 0.734839
+[09:04:10.503] idx 5 mean_dice 0.239360 mean_jc 0.135951
+[09:04:10.585] idx 6 mean_dice 0.921588 mean_jc 0.854579
+[09:04:10.667] idx 7 mean_dice 0.960530 mean_jc 0.924058
+[09:04:10.746] idx 8 mean_dice 0.817859 mean_jc 0.691845
+[09:04:10.837] idx 9 mean_dice 0.636437 mean_jc 0.466746
+[09:04:10.912] idx 10 mean_dice 0.982690 mean_jc 0.965970
+[09:04:10.988] idx 11 mean_dice 0.643288 mean_jc 0.474152
+[09:04:11.068] idx 12 mean_dice 0.816605 mean_jc 0.690053
+[09:04:11.148] idx 13 mean_dice 0.559833 mean_jc 0.388728
+[09:04:11.222] idx 14 mean_dice 0.941644 mean_jc 0.889724
+[09:04:11.314] idx 15 mean_dice 0.822054 mean_jc 0.697871
+[09:04:11.387] idx 16 mean_dice 0.940276 mean_jc 0.887283
+[09:04:11.468] idx 17 mean_dice 0.813039 mean_jc 0.684976
+[09:04:11.541] idx 18 mean_dice 0.961816 mean_jc 0.926441
+[09:04:11.616] idx 19 mean_dice 0.691301 mean_jc 0.528235
+[09:04:11.687] idx 20 mean_dice 0.504973 mean_jc 0.337768
+[09:04:11.762] idx 21 mean_dice 0.938858 mean_jc 0.884762
+[09:04:11.843] idx 22 mean_dice 0.745115 mean_jc 0.593772
+[09:04:11.928] idx 23 mean_dice 0.744735 mean_jc 0.593289
+[09:04:12.012] idx 24 mean_dice 0.399193 mean_jc 0.249369
+[09:04:12.119] idx 25 mean_dice 0.916708 mean_jc 0.846224
+[09:04:12.209] idx 26 mean_dice 0.905345 mean_jc 0.827059
+[09:04:12.290] idx 27 mean_dice 0.958188 mean_jc 0.919732
+[09:04:12.401] idx 28 mean_dice 0.906571 mean_jc 0.829108
+[09:04:12.480] idx 29 mean_dice 0.897655 mean_jc 0.814313
+[09:04:12.569] idx 30 mean_dice 0.743736 mean_jc 0.592022
+[09:04:12.659] idx 31 mean_dice 0.551886 mean_jc 0.381106
+[09:04:12.743] idx 32 mean_dice 0.758727 mean_jc 0.611248
+[09:04:12.840] idx 33 mean_dice 0.000000 mean_jc 0.000000
+[09:04:12.954] idx 34 mean_dice 0.274254 mean_jc 0.158919
+[09:04:13.049] idx 35 mean_dice 0.921336 mean_jc 0.854145
+[09:04:13.166] idx 36 mean_dice 0.894596 mean_jc 0.809293
+[09:04:13.252] idx 37 mean_dice 0.952260 mean_jc 0.908871
+[09:04:13.351] idx 38 mean_dice 0.863555 mean_jc 0.759874
+[09:04:13.475] idx 39 mean_dice 0.890562 mean_jc 0.802715
+[09:04:13.622] idx 40 mean_dice 0.681851 mean_jc 0.517279
+[09:04:13.721] idx 41 mean_dice 0.959448 mean_jc 0.922057
+[09:04:13.822] idx 42 mean_dice 0.931134 mean_jc 0.871141
+[09:04:13.940] idx 43 mean_dice 0.858870 mean_jc 0.752648
+[09:04:14.041] idx 44 mean_dice 0.706062 mean_jc 0.545669
+[09:04:14.144] idx 45 mean_dice 0.783317 mean_jc 0.643813
+[09:04:14.270] idx 46 mean_dice 0.842951 mean_jc 0.728535
+[09:04:14.374] idx 47 mean_dice 0.900148 mean_jc 0.818426
+[09:04:14.490] idx 48 mean_dice 0.773459 mean_jc 0.630602
+[09:04:14.587] idx 49 mean_dice 0.895495 mean_jc 0.810767
+[09:04:14.688] idx 50 mean_dice 0.791454 mean_jc 0.654881
+[09:04:14.794] idx 51 mean_dice 0.918750 mean_jc 0.849711
+[09:04:14.914] idx 52 mean_dice 0.925926 mean_jc 0.862069
+[09:04:15.024] idx 53 mean_dice 0.925652 mean_jc 0.861595
+[09:04:15.141] idx 54 mean_dice 0.874491 mean_jc 0.776973
+[09:04:15.247] idx 55 mean_dice 0.957062 mean_jc 0.917659
+[09:04:15.350] idx 56 mean_dice 0.911553 mean_jc 0.837481
+[09:04:15.464] idx 57 mean_dice 0.728571 mean_jc 0.573034
+[09:04:15.593] idx 58 mean_dice 0.655571 mean_jc 0.487620
+[09:04:15.697] idx 59 mean_dice 0.804450 mean_jc 0.672870
+[09:04:15.805] idx 60 mean_dice 0.910005 mean_jc 0.834870
+[09:04:15.906] idx 61 mean_dice 0.672326 mean_jc 0.506394
+[09:04:16.020] idx 62 mean_dice 0.870888 mean_jc 0.771304
+[09:04:16.111] idx 63 mean_dice 0.837529 mean_jc 0.720472
+[09:04:16.228] idx 64 mean_dice 0.861180 mean_jc 0.756204
+[09:04:16.342] idx 65 mean_dice 0.895357 mean_jc 0.810540
+[09:04:16.446] idx 66 mean_dice 0.917757 mean_jc 0.848014
+[09:04:16.545] idx 67 mean_dice 0.632401 mean_jc 0.462417
+[09:04:16.627] idx 68 mean_dice 0.886322 mean_jc 0.795852
+[09:04:16.708] idx 69 mean_dice 0.978151 mean_jc 0.957236
+[09:04:16.805] idx 70 mean_dice 0.908803 mean_jc 0.832849
+[09:04:16.878] idx 71 mean_dice 0.963470 mean_jc 0.929515
+[09:04:16.994] idx 72 mean_dice 0.711298 mean_jc 0.551949
+[09:04:17.070] idx 73 mean_dice 0.955758 mean_jc 0.915264
+[09:04:17.144] idx 74 mean_dice 0.858031 mean_jc 0.751361
+[09:04:17.220] idx 75 mean_dice 0.905405 mean_jc 0.827160
+[09:04:17.339] idx 76 mean_dice 0.893905 mean_jc 0.808163
+[09:04:17.437] idx 77 mean_dice 0.845336 mean_jc 0.732106
+[09:04:17.546] idx 78 mean_dice 0.465675 mean_jc 0.303505
+[09:04:17.627] idx 79 mean_dice 0.644838 mean_jc 0.475838
+[09:04:17.697] idx 80 mean_dice 0.927870 mean_jc 0.865446
+[09:04:17.768] idx 81 mean_dice 0.874349 mean_jc 0.776750
+[09:04:17.861] idx 82 mean_dice 0.395062 mean_jc 0.246154
+[09:04:17.935] idx 83 mean_dice 0.934373 mean_jc 0.876830
+[09:04:18.015] idx 84 mean_dice 0.826995 mean_jc 0.705022
+[09:04:18.088] idx 85 mean_dice 0.000000 mean_jc 0.000000
+[09:04:18.174] idx 86 mean_dice 0.784242 mean_jc 0.645064
+[09:04:18.247] idx 87 mean_dice 0.678750 mean_jc 0.513718
+[09:04:18.327] idx 88 mean_dice 0.922056 mean_jc 0.855383
+[09:04:18.403] idx 89 mean_dice 0.843170 mean_jc 0.728863
+[09:04:18.477] idx 90 mean_dice 0.937650 mean_jc 0.882619
+[09:04:18.551] idx 91 mean_dice 0.911462 mean_jc 0.837328
+[09:04:18.625] idx 92 mean_dice 0.240099 mean_jc 0.136427
+[09:04:18.701] idx 93 mean_dice 0.787905 mean_jc 0.650036
+[09:04:18.786] idx 94 mean_dice 0.946518 mean_jc 0.898466
+[09:04:18.859] idx 95 mean_dice 0.739489 mean_jc 0.586657
+[09:04:18.930] idx 96 mean_dice 0.929843 mean_jc 0.868884
+[09:04:19.012] idx 97 mean_dice 0.000000 mean_jc 0.000000
+[09:04:19.087] idx 98 mean_dice 0.699205 mean_jc 0.537522
+[09:04:19.159] idx 99 mean_dice 0.954272 mean_jc 0.912544
+[09:04:19.251] idx 100 mean_dice 0.935733 mean_jc 0.879227
+[09:04:19.327] idx 101 mean_dice 0.966408 mean_jc 0.935000
+[09:04:19.404] idx 102 mean_dice 0.656961 mean_jc 0.489160
+[09:04:19.474] idx 103 mean_dice 0.907375 mean_jc 0.830454
+[09:04:19.552] idx 104 mean_dice 0.801147 mean_jc 0.668261
+[09:04:19.633] idx 105 mean_dice 0.929150 mean_jc 0.867676
+[09:04:19.727] idx 106 mean_dice 0.969359 mean_jc 0.940541
+[09:04:19.798] idx 107 mean_dice 0.970833 mean_jc 0.943320
+[09:04:19.873] idx 108 mean_dice 0.817180 mean_jc 0.690874
+[09:04:19.945] idx 109 mean_dice 0.561719 mean_jc 0.390549
+[09:04:20.015] idx 110 mean_dice 0.274914 mean_jc 0.159363
+[09:04:20.084] idx 111 mean_dice 0.881974 mean_jc 0.788868
+[09:04:20.176] idx 112 mean_dice 0.716216 mean_jc 0.557895
+[09:04:20.249] idx 113 mean_dice 0.843541 mean_jc 0.729417
+[09:04:20.321] idx 114 mean_dice 0.830805 mean_jc 0.710579
+[09:04:20.385] idx 115 mean_dice 0.880756 mean_jc 0.786920
+[09:04:20.463] idx 116 mean_dice 0.581020 mean_jc 0.409463
+[09:04:20.525] idx 117 mean_dice 0.929956 mean_jc 0.869082
+[09:04:20.608] idx 118 mean_dice 0.819277 mean_jc 0.693878
+[09:04:20.679] idx 119 mean_dice 0.915430 mean_jc 0.844048
+[09:04:20.743] idx 120 mean_dice 0.972727 mean_jc 0.946903
+[09:04:20.809] idx 121 mean_dice 0.665800 mean_jc 0.499025
+[09:04:20.878] idx 122 mean_dice 0.871050 mean_jc 0.771558
+[09:04:20.923] Mean class 1 mean_dice 0.871050 mean_jc 0.771558
+[09:04:20.923] Testing performance in best val model: mean_dice : 0.787998 mean_hd95 : 0.687215
+[06:30:11.552] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[06:30:12.945] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[06:36:58.721] 123 test iterations per epoch
+[06:39:24.025] Namespace(img_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', gt_root='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', volume_path='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/test_vol_h5', dataset='Polyp', num_classes=2, list_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='/content/drive/MyDrive/MyTransunet/TransUNet-repo/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TU_Polyp224')
+[06:39:24.026] TU_pretrain_R50-ViT-B_16_skip3_bs16_224
+[06:39:25.558] 123 test iterations per epoch
+[06:39:26.252] idx 0 mean_dice 0.939604 mean_jc 0.886088
+[06:39:26.325] idx 1 mean_dice 0.701847 mean_jc 0.540650
+[06:39:26.395] idx 2 mean_dice 0.686203 mean_jc 0.522305
+[06:39:26.465] idx 3 mean_dice 0.759142 mean_jc 0.611789
+[06:39:26.540] idx 4 mean_dice 0.847156 mean_jc 0.734839
+[06:39:26.623] idx 5 mean_dice 0.239360 mean_jc 0.135951
+[06:39:26.686] idx 6 mean_dice 0.921588 mean_jc 0.854579
+[06:39:26.750] idx 7 mean_dice 0.960530 mean_jc 0.924058
+[06:39:26.811] idx 8 mean_dice 0.817859 mean_jc 0.691845
+[06:39:26.880] idx 9 mean_dice 0.636437 mean_jc 0.466746
+[06:39:26.939] idx 10 mean_dice 0.982690 mean_jc 0.965970
+[06:39:26.998] idx 11 mean_dice 0.643288 mean_jc 0.474152
+[06:39:27.065] idx 12 mean_dice 0.816605 mean_jc 0.690053
+[06:39:27.123] idx 13 mean_dice 0.559833 mean_jc 0.388728
+[06:39:27.188] idx 14 mean_dice 0.941644 mean_jc 0.889724
+[06:39:27.245] idx 15 mean_dice 0.822054 mean_jc 0.697871
+[06:39:27.298] idx 16 mean_dice 0.940276 mean_jc 0.887283
+[06:39:27.355] idx 17 mean_dice 0.813039 mean_jc 0.684976
+[06:39:27.424] idx 18 mean_dice 0.961816 mean_jc 0.926441
+[06:39:27.479] idx 19 mean_dice 0.691301 mean_jc 0.528235
+[06:39:27.533] idx 20 mean_dice 0.504973 mean_jc 0.337768
+[06:39:27.590] idx 21 mean_dice 0.938858 mean_jc 0.884762
+[06:39:27.655] idx 22 mean_dice 0.745115 mean_jc 0.593772
+[06:39:27.723] idx 23 mean_dice 0.744735 mean_jc 0.593289
+[06:39:27.815] idx 24 mean_dice 0.399193 mean_jc 0.249369
+[06:39:27.905] idx 25 mean_dice 0.916708 mean_jc 0.846224
+[06:39:27.989] idx 26 mean_dice 0.905345 mean_jc 0.827059
+[06:39:28.060] idx 27 mean_dice 0.958188 mean_jc 0.919732
+[06:39:28.130] idx 28 mean_dice 0.906571 mean_jc 0.829108
+[06:39:28.207] idx 29 mean_dice 0.897655 mean_jc 0.814313
+[06:39:28.297] idx 30 mean_dice 0.743736 mean_jc 0.592022
+[06:39:28.370] idx 31 mean_dice 0.551886 mean_jc 0.381106
+[06:39:28.434] idx 32 mean_dice 0.758727 mean_jc 0.611248
+[06:39:28.513] idx 33 mean_dice 0.000000 mean_jc 0.000000
+[06:39:28.590] idx 34 mean_dice 0.274254 mean_jc 0.158919
+[06:39:28.651] idx 35 mean_dice 0.921336 mean_jc 0.854145
+[06:39:28.724] idx 36 mean_dice 0.894596 mean_jc 0.809293
+[06:39:28.826] idx 37 mean_dice 0.952260 mean_jc 0.908871
+[06:39:28.896] idx 38 mean_dice 0.863555 mean_jc 0.759874
+[06:39:28.982] idx 39 mean_dice 0.890562 mean_jc 0.802715
+[06:39:29.092] idx 40 mean_dice 0.681851 mean_jc 0.517279
+[06:39:29.169] idx 41 mean_dice 0.959448 mean_jc 0.922057
+[06:39:29.245] idx 42 mean_dice 0.931134 mean_jc 0.871141
+[06:39:29.338] idx 43 mean_dice 0.858870 mean_jc 0.752648
+[06:39:29.415] idx 44 mean_dice 0.706062 mean_jc 0.545669
+[06:39:29.493] idx 45 mean_dice 0.783317 mean_jc 0.643813
+[06:39:29.567] idx 46 mean_dice 0.842951 mean_jc 0.728535
+[06:39:29.642] idx 47 mean_dice 0.900148 mean_jc 0.818426
+[06:39:29.717] idx 48 mean_dice 0.773459 mean_jc 0.630602
+[06:39:29.808] idx 49 mean_dice 0.895495 mean_jc 0.810767
+[06:39:29.883] idx 50 mean_dice 0.791454 mean_jc 0.654881
+[06:39:29.960] idx 51 mean_dice 0.918750 mean_jc 0.849711
+[06:39:30.052] idx 52 mean_dice 0.925926 mean_jc 0.862069
+[06:39:30.127] idx 53 mean_dice 0.925652 mean_jc 0.861595
+[06:39:30.207] idx 54 mean_dice 0.874491 mean_jc 0.776973
+[06:39:30.288] idx 55 mean_dice 0.957062 mean_jc 0.917659
+[06:39:30.373] idx 56 mean_dice 0.911553 mean_jc 0.837481
+[06:39:30.450] idx 57 mean_dice 0.728571 mean_jc 0.573034
+[06:39:30.529] idx 58 mean_dice 0.655571 mean_jc 0.487620
+[06:39:30.621] idx 59 mean_dice 0.804450 mean_jc 0.672870
+[06:39:30.684] idx 60 mean_dice 0.910005 mean_jc 0.834870
+[06:39:30.773] idx 61 mean_dice 0.672326 mean_jc 0.506394
+[06:39:30.870] idx 62 mean_dice 0.870888 mean_jc 0.771304
+[06:39:30.942] idx 63 mean_dice 0.837529 mean_jc 0.720472
+[06:39:31.021] idx 64 mean_dice 0.861180 mean_jc 0.756204
+[06:39:31.101] idx 65 mean_dice 0.895357 mean_jc 0.810540
+[06:39:31.180] idx 66 mean_dice 0.917757 mean_jc 0.848014
+[06:39:31.272] idx 67 mean_dice 0.632401 mean_jc 0.462417
+[06:39:31.371] idx 68 mean_dice 0.886322 mean_jc 0.795852
+[06:39:31.451] idx 69 mean_dice 0.978151 mean_jc 0.957236
+[06:39:31.536] idx 70 mean_dice 0.908803 mean_jc 0.832849
+[06:39:31.612] idx 71 mean_dice 0.963470 mean_jc 0.929515
+[06:39:31.693] idx 72 mean_dice 0.711298 mean_jc 0.551949
+[06:39:31.769] idx 73 mean_dice 0.955758 mean_jc 0.915264
+[06:39:31.860] idx 74 mean_dice 0.858031 mean_jc 0.751361
+[06:39:31.937] idx 75 mean_dice 0.905405 mean_jc 0.827160
+[06:39:32.030] idx 76 mean_dice 0.893905 mean_jc 0.808163
+[06:39:32.123] idx 77 mean_dice 0.845336 mean_jc 0.732106
+[06:39:32.228] idx 78 mean_dice 0.465675 mean_jc 0.303505
+[06:39:32.309] idx 79 mean_dice 0.644838 mean_jc 0.475838
+[06:39:32.417] idx 80 mean_dice 0.927870 mean_jc 0.865446
+[06:39:32.520] idx 81 mean_dice 0.874349 mean_jc 0.776750
+[06:39:32.594] idx 82 mean_dice 0.395062 mean_jc 0.246154
+[06:39:32.677] idx 83 mean_dice 0.934373 mean_jc 0.876830
+[06:39:32.762] idx 84 mean_dice 0.826995 mean_jc 0.705022
+[06:39:32.865] idx 85 mean_dice 0.000000 mean_jc 0.000000
+[06:39:33.003] idx 86 mean_dice 0.784242 mean_jc 0.645064
+[06:39:33.120] idx 87 mean_dice 0.678750 mean_jc 0.513718
+[06:39:33.224] idx 88 mean_dice 0.922056 mean_jc 0.855383
+[06:39:33.333] idx 89 mean_dice 0.843170 mean_jc 0.728863
+[06:39:33.417] idx 90 mean_dice 0.937650 mean_jc 0.882619
+[06:39:33.505] idx 91 mean_dice 0.911462 mean_jc 0.837328
+[06:39:33.618] idx 92 mean_dice 0.240099 mean_jc 0.136427
+[06:39:33.725] idx 93 mean_dice 0.787905 mean_jc 0.650036
+[06:39:33.847] idx 94 mean_dice 0.946518 mean_jc 0.898466
+[06:39:33.982] idx 95 mean_dice 0.739489 mean_jc 0.586657
+[06:39:34.072] idx 96 mean_dice 0.929843 mean_jc 0.868884
+[06:39:34.159] idx 97 mean_dice 0.000000 mean_jc 0.000000
+[06:39:34.276] idx 98 mean_dice 0.699205 mean_jc 0.537522
+[06:39:34.388] idx 99 mean_dice 0.954272 mean_jc 0.912544
+[06:39:34.453] idx 100 mean_dice 0.935733 mean_jc 0.879227
+[06:39:34.522] idx 101 mean_dice 0.966408 mean_jc 0.935000
+[06:39:34.589] idx 102 mean_dice 0.656961 mean_jc 0.489160
+[06:39:34.656] idx 103 mean_dice 0.907375 mean_jc 0.830454
+[06:39:34.753] idx 104 mean_dice 0.801147 mean_jc 0.668261
+[06:39:34.847] idx 105 mean_dice 0.929150 mean_jc 0.867676
+[06:39:34.923] idx 106 mean_dice 0.969359 mean_jc 0.940541
+[06:39:35.003] idx 107 mean_dice 0.970833 mean_jc 0.943320
+[06:39:35.084] idx 108 mean_dice 0.817180 mean_jc 0.690874
+[06:39:35.151] idx 109 mean_dice 0.561719 mean_jc 0.390549
+[06:39:35.275] idx 110 mean_dice 0.274914 mean_jc 0.159363
+[06:39:35.356] idx 111 mean_dice 0.881974 mean_jc 0.788868
+[06:39:35.438] idx 112 mean_dice 0.716216 mean_jc 0.557895
+[06:39:35.509] idx 113 mean_dice 0.843541 mean_jc 0.729417
+[06:39:35.592] idx 114 mean_dice 0.830805 mean_jc 0.710579
+[06:39:35.653] idx 115 mean_dice 0.880756 mean_jc 0.786920
+[06:39:35.737] idx 116 mean_dice 0.581020 mean_jc 0.409463
+[06:39:35.806] idx 117 mean_dice 0.929956 mean_jc 0.869082
+[06:39:35.869] idx 118 mean_dice 0.819277 mean_jc 0.693878
+[06:39:35.932] idx 119 mean_dice 0.915430 mean_jc 0.844048
+[06:39:35.994] idx 120 mean_dice 0.972727 mean_jc 0.946903
+[06:39:36.056] idx 121 mean_dice 0.665800 mean_jc 0.499025
+[06:39:36.131] idx 122 mean_dice 0.871050 mean_jc 0.771558
+[06:39:36.201] Mean class 1 mean_dice 0.871050 mean_jc 0.771558
+[06:39:36.202] Testing performance in best val model: mean_dice : 0.787998 mean_jc : 0.687215

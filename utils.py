@@ -45,13 +45,56 @@ class DiceLoss(nn.Module):
         return loss / self.n_classes
 
 
+class IoULoss(nn.Module):
+    def __init__(self, n_classes):
+        super(IoULoss, self).__init__()
+        self.n_classes = n_classes
+    
+    def _one_hot_encoder(self, input_tensor):
+        tensor_list = []
+        for i in range(self.n_classes):
+            temp_prob = input_tensor == i  # * torch.ones_like(input_tensor)
+            tensor_list.append(temp_prob.unsqueeze(1))
+        output_tensor = torch.cat(tensor_list, dim=1)
+        return output_tensor.float()
+    
+    def _iou_loss(self, score, target):
+        target = target.float()
+        smooth = 1e-5
+        intersection = torch.sum(score * target)
+        total = torch.sum(score + target)
+        union = total - intersection
+        IoU = (intersection + smooth)/(union + smooth)
+        return 1 - IoU
+
+
+    def forward(self, inputs, target, weight=None, softmax=False):
+        if softmax:
+            inputs = torch.softmax(inputs, dim=1)
+        target = self._one_hot_encoder(target)
+        if weight is None:
+            weight = [1] * self.n_classes
+        assert inputs.size() == target.size(), 'predict {} & target {} shape do not match'.format(inputs.size(), target.size())
+        class_wise_iou = []
+        loss = 0.0
+        for i in range(0, self.n_classes):
+            iou = self._iou_loss(inputs[:, i], target[:, i])
+            class_wise_iou.append(1.0 - iou.item())
+            loss += iou * weight[i]
+        return loss / self.n_classes
+
+
+
 def calculate_metric_percase(pred, gt):
     pred[pred > 0] = 1
     gt[gt > 0] = 1
     if pred.sum() > 0 and gt.sum()>0:
         dice = metric.binary.dc(pred, gt)
-        hd95 = metric.binary.hd95(pred, gt)
-        return dice, hd95
+        # hd95 = metric.binary.hd95(pred, gt)
+        # hd95 = metric.binary.hd95(pred, gt)
+        jc = metric.binary.jc(pred, gt)
+        # return dice, hd95
+        return dice, jc
     elif pred.sum() > 0 and gt.sum()==0:
         return 1, 0
     else:
@@ -101,6 +144,12 @@ def test_single_volume(image, label, net, classes, patch_size=[224, 224], test_s
         sitk.WriteImage(img_itk, test_save_path + '/'+ case + "_img.nii.gz")
         sitk.WriteImage(lab_itk, test_save_path + '/'+ case + "_gt.nii.gz")
     return metric_list
+
+
+# def test_polyp(image, label, net, classes, test_save_path=None):
+#     image, label = image.squeeze(0).cpu().detach().numpy(), label.squeeze(0).cpu().detach().numpy()
+
+    
 
 
 def one_hot_encode(label, label_values):

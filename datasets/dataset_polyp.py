@@ -278,8 +278,8 @@ class PolypDataset(data.Dataset):
         self.trainsize = trainsize
         self.augmentations = augmentations
         # print(self.augmentations)
-        self.images = [image_root + f for f in os.listdir(image_root) if f.endswith('.jpg') or f.endswith('.png')]
-        self.gts = [gt_root + f for f in os.listdir(gt_root) if f.endswith('.jpg') or f.endswith('.png')]
+        self.images = [image_root + f for f in os.listdir(image_root) if f.endswith('.jpg') or f.endswith('.png') or f.endswith('.bmp')]
+        self.gts = [gt_root + f for f in os.listdir(gt_root) if f.endswith('.jpg') or f.endswith('.png') or f.endswith('.bmp')]
         self.images = sorted(self.images)
         self.gts = sorted(self.gts)
         self.filter_files()
@@ -327,7 +327,7 @@ class PolypDataset(data.Dataset):
         if self.split == 'train':
           image = self.rgb_loader(self.images[:self.splt][index])
           gt = self.binary_loader(self.gts[:self.splt][index])
-        else: # also never called?
+        else: # also never called? no :)
           image = self.rgb_loader(self.images[self.splt:][index])
           gt = self.binary_loader(self.gts[self.splt:][index])
         
