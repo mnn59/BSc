@@ -4,6 +4,13 @@ from medpy import metric
 from scipy.ndimage import zoom
 import torch.nn as nn
 import SimpleITK as sitk
+from torchvision import transforms
+from PIL import Image
+import os
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import cv2
+
 
 
 class DiceLoss(nn.Module):
@@ -172,3 +179,101 @@ def colour_code_segmentation(image, label_values):
     colour_codes = np.array(label_values)
     x = colour_codes[image]
     return x
+
+
+
+def display_result(directory):
+    # display (5 examples) contents of folders from 10 to 15
+    for ifolder in range(10, 15):
+        _path = directory + '/' + str(ifolder)
+        for i, file in enumerate(os.listdir(_path)):
+            if file.endswith('.jpg'):
+                _type = file.split('.')[0].split('_')[1]
+                _number = file.split('_')[0]
+
+                if _type == 'img':
+                    img = cv2.cvtColor(cv2.imread(os.path.join(_path, str(_number + '_' + _type + '.jpg'))), cv2.COLOR_BGR2RGB)
+                elif _type == 'gt':
+                    gt = cv2.imread(os.path.join(_path, str(_number + '_' +_type + '.jpg')), cv2.IMREAD_GRAYSCALE)
+                elif _type == 'pred':  # pred
+                    prd = cv2.imread(os.path.join(_path, str(_number + '_' + _type + '.jpg')), cv2.IMREAD_GRAYSCALE)
+                    
+        gt = np.expand_dims(gt, axis=2)
+        prd = np.expand_dims(prd, axis=2)
+
+        images = {'original_image': img,
+                  'ground_truth_mask': gt,
+                  'prediction_mask': prd}
+
+        n_images = 3
+        fig = plt.figure(figsize=(20, 8))
+        for idx, (name, image) in enumerate(images.items()):
+            plt.subplot(1, n_images, idx + 1)
+            plt.title(name.replace('_', ' ').title(), fontsize=20)
+            if image.shape[2] == 1:
+              plt.imshow(image, cmap='gray')
+            else:
+              plt.imshow(image)
+        plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# directory = '/content/drive/MyDrive/MyTransunet/results/ph2-cascade'
+# fig = plt.figure(figsize=(8, 8))
+
+
+# # display (5 examples) contents of folders from 10 to 15
+# for ifolder in range(10, 15):
+#     _path = directory + '/' + str(ifolder)
+#     for i, file in enumerate(os.listdir(_path)):
+#         if file.endswith('.jpg'):
+#             _type = file.split('.')[0].split('_')[1]
+#             _number = file.split('_')[0]
+
+#             if _type == 'img':
+#                 img = cv2.cvtColor(cv2.imread(os.path.join(_path, str(_number + '_' + _type + '.jpg'))), cv2.COLOR_BGR2RGB)
+#             elif _type == 'gt':
+#                 gt = cv2.imread(os.path.join(_path, str(_number + '_' +_type + '.jpg')), cv2.IMREAD_GRAYSCALE)
+#             elif _type == 'pred':  # pred
+#                 prd = cv2.imread(os.path.join(_path, str(_number + '_' + _type + '.jpg')), cv2.IMREAD_GRAYSCALE)
+
+
+#     gt = np.expand_dims(gt, axis=2)
+#     prd = np.expand_dims(prd, axis=2)
+
+#     images = {'original_image': img,
+#               'ground_truth_mask': gt,
+#               'prediction_mask': prd}
+
+#     n_images = 3
+#     fig = plt.figure(figsize=(20, 8))
+#     for idx, (name, image) in enumerate(images.items()):
+#         plt.subplot(1, n_images, idx + 1)
+#         plt.title(name.replace('_', ' ').title(), fontsize=20)
+#         if image.shape[2] == 1:
+#           plt.imshow(image, cmap='gray')
+#         else:
+#           plt.imshow(image)
+
+
+    # plt.show()
