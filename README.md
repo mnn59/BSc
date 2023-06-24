@@ -35,7 +35,7 @@ TransUNet achieves good results compared to different architectures; therefore, 
 
 ## 💫 Demo <a name="demo"></a>
  <p align="center">
-  <img width="60%" src="https://github.com/mnn59/BSc/blob/main/assets/demo.jpg">
+  <img width="100%" src="https://github.com/mnn59/BSc/blob/main/assets/demo.jpg">
  </p>
 
 ---
