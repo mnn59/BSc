@@ -497,9 +497,7 @@ class TransCASCADE(nn.Module):
     def forward(self, x, im_size=224):
       
         if x.size()[1] == 1:
-            # x = x.repeat(1,3,1,1)  # like: torch.Size([1, 3, 224, 224])
             x = self.conv(x)
-        # x, attn_weights, features = self.transformer(x, im_size)  # (B, n_patch, hidden)
         x, attn_weights, features = self.transformer(x)  # (B, n_patch, hidden)
         B, n_patch, hidden = x.size()  # reshape from (B, n_patch, hidden) to (B, h, w, hidden)
         h, w = int(np.sqrt(n_patch)), int(np.sqrt(n_patch))
