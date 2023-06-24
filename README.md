@@ -1,13 +1,12 @@
 <div align="center">
  
-![logo](https://github.com/mnn59/BSc/blob/main/assets/app.png)  
+<!--![logo](https://github.com/mnn59/BSc/blob/main/assets/logo.jpeg)  -->
 
 <h1 align="center"><strong>🩺 Medical Image Segmentation System (MISS) <h6 align="center">My BSc project</h6></strong></h1>
 
 ![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch)
 ![Python - Version](https://img.shields.io/badge/PYTHON-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
 [![GitHub Issues](https://img.shields.io/github/issues/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch.svg?style=for-the-badge)](https://github.com/mnn59/BSc/issues)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=for-the-badge)
 
 </div>
 
@@ -21,17 +20,16 @@
   - [Prepare Data](#prepare-data)
   - [Train/Test](#traintest)
   - [Running the Gradio WebApp](#running-the-app)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ----
 
 ## 📌 Overview <a name="overview"></a>
-An end-to-end Computer Vision project focused on the topic of <a href="https://en.wikipedia.org/wiki/Image_segmentation" target="_blank">Image Segmentation</a> (specifically Semantic Segmentation). Although this project has primarily been built with the <a href="https://landcover.ai.linuxpolska.com/" target="_blank">LandCover.ai dataset</a>, the project template can be applied to train a model on any semantic segmentation dataset and extract inference outputs from the model in a <b>promptable</b> fashion. Though this is not even close to actual promptable AI, the term is being used here because of a specific functionality that has been integrated here.
+An end-to-end Computer Vision project focused on the topic of <a href="https://en.wikipedia.org/wiki/Image_segmentation" target="_blank">Image Segmentation</a> (specifically Semantic Segmentation). Although this project has primarily been built with the <a href="https://gradio.app/" target="_blank">Gradio</a>.
 
-The model can be trained on any or all the classes present in the semantic segmentation dataset with the ability to customize the model architecture, optimizer, learning rate, and a lot more parameters directly from the config file, giving it an <b>exciting AutoML</b> aspect. Thereafter while testing, the user can pass the prompt (in the form of the config variable '<b>test_classes</b>') of the selected classes that the user wants to be present in the masks predicted by the trained model.
+Rapid advances in the field of medical imaging are revolutionizing medicine. For example, the diseases diagnosis with the help of computers, where the segmentation of medical images plays an important role, has become more accurate. Although CNN-based methods have achieved excellent performance in recent years, but due to the intrinsic locality of convolution operations, they cannot learn explicit global and long-range semantic information well. Given the increased interest in self-attention mechanisms in computer vision and their ability to overcome this problem, the TransUNet architecture was proposed as the first medical image segmentation framework using Vision Transformer as a strong encoder in a U-shaped architecture.
 
-For example, suppose the model has been trained on all the 30 classes of the <a href="https://www.cityscapes-dataset.com/" target="_blank">CityScapes dataset</a> and while inferencing, the user only wants the class <b>'parking'</b> to be present in the predicted mask due to a specific use-case application. Therefore, the user can provide the prompt as '<b>test_classes = ['parking']</b>' in the config file and get the desired output.
+TransUNet achieves good results compared to different architectures; therefore, in this project, we use it as the base model that has a hybrid CNN-Transformer architecture. this architecture is able to leverage both detailed high-resolution spatial information from CNN features and the global context encoded by Transformers. All experiments are conducted on Kvasir-SEG, CVC-ClinicDB and Ph2 datasets. First, we reproduce the results in the original paper, and then we proceed to improve the architecture by making appropriate changes and check the results. Some of these changes have been successful and others have been unsuccessful. Finally, we created a web-based system based on the new architecture.
 
 ----
 
