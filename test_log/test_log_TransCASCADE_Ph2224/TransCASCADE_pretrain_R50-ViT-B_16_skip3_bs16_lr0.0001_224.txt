@@ -88,3 +88,48 @@
 [00:21:58.814] idx 39 mean_dice 0.941109 mean_jc 0.888768
 [00:21:58.896] Mean class 1 mean_dice 0.941109 mean_jc 0.888768
 [00:21:58.896] Testing performance in best val model: mean_dice : 0.958136 mean_jc : 0.920734
+[10:05:24.537] Namespace(img_root='/content/drive/MyDrive/datasets/ph2/trainx/', gt_root='/content/drive/MyDrive/datasets/ph2/trainy/', dataset='Ph2', num_classes=2, max_iterations=20000, max_epochs=30, batch_size=16, img_size=224, is_save=True, n_skip=3, vit_name='R50-ViT-B_16', deterministic=1, base_lr=0.0001, seed=1234, vit_patches_size=16, arch='Transcascade', Dataset=<class 'datasets.dataset_polyp.PolypDataset'>, is_pretrain=True, exp='TransCASCADE_Ph2224')
+[10:05:24.822] TransCASCADE_pretrain_R50-ViT-B_16_skip3_bs16_lr0.0001_224
+[10:05:25.480] 40 test iterations per epoch
+[10:05:26.982] idx 0 mean_dice 0.969962 mean_jc 0.941677
+[10:05:27.880] idx 1 mean_dice 0.935626 mean_jc 0.879039
+[10:05:28.699] idx 2 mean_dice 0.967674 mean_jc 0.937373
+[10:05:29.616] idx 3 mean_dice 0.879856 mean_jc 0.785485
+[10:05:30.455] idx 4 mean_dice 0.946508 mean_jc 0.898449
+[10:05:31.246] idx 5 mean_dice 0.963667 mean_jc 0.929882
+[10:05:32.090] idx 6 mean_dice 0.970027 mean_jc 0.941798
+[10:05:33.198] idx 7 mean_dice 0.956560 mean_jc 0.916737
+[10:05:34.051] idx 8 mean_dice 0.975986 mean_jc 0.953098
+[10:05:34.928] idx 9 mean_dice 0.975624 mean_jc 0.952407
+[10:05:35.795] idx 10 mean_dice 0.887025 mean_jc 0.796985
+[10:05:36.670] idx 11 mean_dice 0.968008 mean_jc 0.937999
+[10:05:37.536] idx 12 mean_dice 0.977821 mean_jc 0.956605
+[10:05:38.384] idx 13 mean_dice 0.977411 mean_jc 0.955821
+[10:05:39.271] idx 14 mean_dice 0.913273 mean_jc 0.840388
+[10:05:40.145] idx 15 mean_dice 0.972705 mean_jc 0.946860
+[10:05:40.988] idx 16 mean_dice 0.966992 mean_jc 0.936093
+[10:05:41.907] idx 17 mean_dice 0.968038 mean_jc 0.938056
+[10:05:42.706] idx 18 mean_dice 0.930255 mean_jc 0.869604
+[10:05:43.549] idx 19 mean_dice 0.984201 mean_jc 0.968894
+[10:05:44.401] idx 20 mean_dice 0.964753 mean_jc 0.931906
+[10:05:45.243] idx 21 mean_dice 0.973305 mean_jc 0.947998
+[10:05:46.219] idx 22 mean_dice 0.966894 mean_jc 0.935910
+[10:05:47.068] idx 23 mean_dice 0.967402 mean_jc 0.936863
+[10:05:47.982] idx 24 mean_dice 0.982450 mean_jc 0.965504
+[10:05:48.867] idx 25 mean_dice 0.932027 mean_jc 0.872706
+[10:05:49.742] idx 26 mean_dice 0.969838 mean_jc 0.941443
+[10:05:50.573] idx 27 mean_dice 0.982775 mean_jc 0.966133
+[10:05:51.412] idx 28 mean_dice 0.943751 mean_jc 0.893493
+[10:05:52.313] idx 29 mean_dice 0.965027 mean_jc 0.932418
+[10:05:53.212] idx 30 mean_dice 0.914370 mean_jc 0.842248
+[10:05:54.213] idx 31 mean_dice 0.984443 mean_jc 0.969364
+[10:05:54.996] idx 32 mean_dice 0.923427 mean_jc 0.857746
+[10:05:55.878] idx 33 mean_dice 0.968183 mean_jc 0.938329
+[10:05:56.634] idx 34 mean_dice 0.970729 mean_jc 0.943123
+[10:05:57.439] idx 35 mean_dice 0.979217 mean_jc 0.959281
+[10:05:58.290] idx 36 mean_dice 0.961276 mean_jc 0.925440
+[10:05:59.150] idx 37 mean_dice 0.966152 mean_jc 0.934520
+[10:06:00.021] idx 38 mean_dice 0.981101 mean_jc 0.962902
+[10:06:00.860] idx 39 mean_dice 0.941109 mean_jc 0.888768
+[10:06:00.934] Mean class 1 mean_dice 0.941109 mean_jc 0.888768
+[10:06:00.935] Testing performance in best val model: mean_dice : 0.958136 mean_jc : 0.920734
