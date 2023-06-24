@@ -17,9 +17,10 @@
 - [Overview](#overview)
 - [Demo](#demo)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup without Docker](#setup)
-  - [Running the project without Docker](#running-the-project)
+  - [Download ViT model](#vit-model)
+  - [Prepare Data](#prepare-data)
+  - [Train/Test](#traintest)
+  - [Running the Gradio WebApp](#running-the-app)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -43,76 +44,58 @@ For example, suppose the model has been trained on all the 30 classes of the <a 
 
 ## 🚀 Getting Started <a name="getting-started"></a>
 
-### ✅ Prerequisites <a name="prerequisites"></a>
- 
- - <b>Dataset prerequisite for training</b>:
- 
- Before starting to train a model, make sure to download the dataset from <a href="https://landcover.ai.linuxpolska.com/" target="_blank">LandCover.ai</a> or from <a href="https://www.kaggle.com/datasets/adrianboguszewski/landcoverai" target="_blank">kaggle/LandCover.ai</a>, and copy/move over the downloaded directories 'images' and 'masks' to the 'train' directory of the project.
+### Download Google pre-trained ViT model <a name="vit-model"></a>
+* [Get models in this link](https://console.cloud.google.com/storage/vit_models/): R50-ViT-B_16
+```bash
+wget https://storage.googleapis.com/vit_models/imagenet21k/R50-ViT-B_16.npz &&
+mkdir ../model/vit_checkpoint/imagenet21k &&
+mv R50-ViT-B_16.npz ../model/vit_checkpoint/imagenet21k/R50-ViT-B_16.npz
+```
+
+### Prepare data <a name="prepare-data"></a>
+
+Go to these links to download these 3 datasets, which used in this project:
+- <b>CVC-ClinicDB:</b> <a href="https://polyp.grand-challenge.org/CVCClinicDB/">link</a>
+- <b>Kvasir-SEG:</b> <a href="https://datasets.simula.no/kvasir-seg/">link</a>
+- <b>Ph2:</b> <a href="https://www.fc.up.pt/addi/ph2%20database.html">link</a>
+
+### Environment
+
+Please prepare an environment with python=3.9, and then use the command "pip install -r requirements.txt" for the dependencies.
 
 
-### 💻 Setup (Without 🐳 Docker) <a name="setup"></a>
+### 💻 Train/Test <a name="traintest"></a>
  
- 1. Clone the repository:
- ```shell
- git clone https://github.com/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch.git
- ```
- 2. Change to the project directory:
- ```shell
- cd Land-Cover-Semantic-Segmentation-PyTorch
- ```
- 3. Setting up programming environment to run the project:
- 
- - If using an installed <a hre="https://docs.conda.io/en/latest/">conda</a> package manager, i.e. either Anaconda or Miniconda, create the conda environment following the steps mentioned below:
- ```shell
- conda create --name <environment-name> python=3.9
- conda activate <environment-name>
- ```
- - If using a directly installed python software, create the virtual environment following the steps mentioned below:
- ```shell
- python -m venv <environment-name>
- <environment-name>\Scripts\activate
- ```
- 4. Install the dependencies:
- ```shell
- pip install -r requirements.txt
- ```
+Run the train script on each dataset. Use `--arch` to choose architecture between <b>Transunet</b> and <b>Transcascade</b>.
 
-### 🤖 Running the project (Without 🐳 Docker) <a name="running-the-project"></a>
- 
- Running the model training and testing/inferencing scripts from the project directory. It is not necessary to train the model first mandatorily, as a simple trained model has been provided to run the test and check outputs before trying to fine-tune the model.
- 
- 1. Run the model training script:
- ```shell
- cd src
- python train.py
- ```
- 2. Run the model testing/inferencing script:
- ```shell
- cd src
- python test.py
- ```
+```bash
+CUDA_VISIBLE_DEVICES=0 python train.py --dataset Kvasir --arch Transunet
+```
+
+Run the test script on each dataset. Use the same architecture you used for training.
+
+```bash
+python test.py --dataset Kvasir --arch Transunet
+```
+
+
+### 🤖 Running the Gradio WebApp <a name="running-the-app"></a>
+
+After running this script, You will be directed to the app page via a unique link.
+
+ ```bash
+python gradio_test.py
+```
 
 ----
 
 
 ## 👏 Acknowledgements <a name="acknowledgements"></a>
- - [qubvel/segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch)
- ```
- @misc{Iakubovskii:2019,
-  Author = {Pavel Iakubovskii},
-  Title = {Segmentation Models Pytorch},
-  Year = {2019},
-  Publisher = {GitHub},
-  Journal = {GitHub repository},
-  Howpublished = {\url{https://github.com/qubvel/segmentation_models.pytorch}}
- }
- ```
- - [LandCover.ai](https://landcover.ai.linuxpolska.com/)
- - [bnsreenu/python_for_microscopists](https://github.com/bnsreenu/python_for_microscopists)
- - [leonardo.ai](https://leonardo.ai)
+We are very grateful for these excellent works [TransUNet](https://github.com/Beckschen/TransUNet/) and [CASCADE](https://github.com/SLDGroup/CASCADE), which have provided the basis for our framework.
 
 <p align="right">
  <a href="#top"><b>🔝 Return </b></a>
 </p>
 
 ---
+
