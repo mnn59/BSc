@@ -130,8 +130,9 @@ if __name__ == "__main__":
                 flagging_options=["correct ✅", "incorrect ❌", "other"],
                 capture_session=True,
                 examples=[
-                    ['Skin lesion',  os.path.join(os.path.abspath(''), "/content/drive/MyDrive/datasets/ph2/trainx/X_img_0.bmp")],
-                    ['Polyp',  os.path.abspath('../../../../../gr-exmpls/123.png')],
+                    # ['Skin lesion',  os.path.join(os.path.abspath(''), "/content/drive/MyDrive/datasets/ph2/trainx/X_img_0.bmp")],
+                    ['Skin lesion',  os.path.abspath("/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/gradio-examples/Ph2/X_img_53.bmp")],
+                    ['Polyp',  os.path.abspath('/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/gradio-examples/EndoScene/images/123.png')],
                 ], 
                 title='Medical Image Segmentation System (MISS)',
                 description='This is image segmentation system for medical images of polyps and skin lesions. This app is implemented by `@Mahdi_Niknejad`'
