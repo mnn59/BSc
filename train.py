@@ -8,19 +8,12 @@ import torch.backends.cudnn as cudnn
 from networks.vit_seg_modeling import VisionTransformer as ViT_seg
 from networks.vit_seg_modeling import CONFIGS as CONFIGS_ViT_seg
 from networks.vit_seg_modeling import TransCASCADE
-# from trainer import trainer_synapse
 from trainer import trainer_polyp, trainer_cascade
 
 parser = argparse.ArgumentParser()
-# parser.add_argument('--root_path', type=str,
-#                     default='../data/Synapse/train_npz', help='root dir for data')
-# parser.add_argument('--root_path', type=str,
-#                     default='/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/train_npz', help='root dir for data')
 parser.add_argument('--img_root', type=str, default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Original/', help='root dir for data')
 parser.add_argument('--gt_root', type=str, default='/content/drive/MyDrive/MyBScProject/project_TransUNet/data/Polyp/Ground Truth/', help='root dir for mask')
-# parser.add_argument('--dataset', type=str, default='Synapse', help='experiment_name')
 parser.add_argument('--dataset', type=str, default='Polyp', help='experiment_name')
-# parser.add_argument('--list_dir', type=str, default='./lists/lists_Synapse', help='list dir')
 parser.add_argument('--list_dir', type=str, default='/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse', help='list dir')
 parser.add_argument('--num_classes', type=int, default=2, help='output channel of network')
 parser.add_argument('--max_iterations', type=int, default=30000, help='maximum epoch number to train')
@@ -53,9 +46,7 @@ if __name__ == "__main__":
     dataset_name = args.dataset
     dataset_config = {
         'Synapse': {
-            # 'root_path': '../data/Synapse/train_npz',
             'root_path': '/content/drive/MyDrive/MyTransunet/TransUNet-repo/data/Synapse/train_npz',
-            # 'list_dir': './lists/lists_Synapse',
             'list_dir': '/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/lists/lists_Synapse',
             'num_classes': 9,
         },
@@ -81,17 +72,10 @@ if __name__ == "__main__":
         },
     }
     args.num_classes = dataset_config[dataset_name]['num_classes']
-    # args.root_path = dataset_config[dataset_name]['root_path']
     args.img_root = dataset_config[dataset_name]['img_root']
     args.gt_root = dataset_config[dataset_name]['gt_root']
-    # args.list_dir = dataset_config[dataset_name]['list_dir']
     args.is_pretrain = True
-    # args.exp = 'TU_' + dataset_name + str(args.img_size)  # Transunet
-    # args.exp = 'TransCASCADE_' + dataset_name + str(args.img_size)  # TransCASCADE
     args.exp = ('TU_' if args.arch == 'Transunet' else 'TransCASCADE_') + dataset_name + str(args.img_size)  # Both Transunet and TransCASCADE
-    # snapshot_path = "../model/{}/{}".format(args.exp, 'TU')
-    # snapshot_path = "/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/{}/{}".format(args.exp, 'TU')  # Transunet
-    # snapshot_path = "/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/{}/{}".format(args.exp, 'TransCASCADE')  # TransCASCADE
     snapshot_path = "/content/drive/MyDrive/MyTransunet/TransUNet-repo/model/{}/{}".format(args.exp, ('TU' if args.arch == 'Transunet' else 'TransCASCADE'))  # Both Transunet and TransCASCADE
     snapshot_path = snapshot_path + '_pretrain' if args.is_pretrain else snapshot_path
     snapshot_path += '_' + args.vit_name
@@ -115,8 +99,6 @@ if __name__ == "__main__":
         'Transunet': ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda(),
         'Transcascade': TransCASCADE(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()
     }
-    # net = ViT_seg(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()  # Transunet
-    # net = TransCASCADE(config_vit, img_size=args.img_size, num_classes=config_vit.n_classes).cuda()  # TransCASCADE
     net = nets[args.arch]  # Both Transunet and TransCASCADE
     net.load_from(weights=np.load(config_vit.pretrained_path))
 
@@ -124,7 +106,5 @@ if __name__ == "__main__":
         'Transunet': trainer_polyp,
         'Transcascade': trainer_cascade
     }
-    # trainer = {'Polyp': trainer_polyp, 'Kvasir': trainer_polyp, 'Ph2': trainer_polyp}  # Transunet
-    # trainer = {'Polyp': trainer_cascade, 'Kvasir': trainer_cascade, 'Ph2': trainer_cascade}  # TransCASCADE
     trainer = {'Polyp': trainer_[args.arch], 'Kvasir': trainer_[args.arch], 'Ph2': trainer_[args.arch], 'CVCKvasir': trainer_[args.arch]}  # Both Transunet and TransCASCADE
     trainer[dataset_name](args, net, snapshot_path)

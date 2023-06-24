@@ -17,9 +17,7 @@ from torchvision import transforms
 from lion_pytorch import Lion
 
 
-# def trainer_synapse(args, model, snapshot_path):
 def trainer_polyp(args, model, snapshot_path):
-    # from datasets.dataset_synapse import Synapse_dataset, RandomGenerator
     from datasets.dataset_polyp import PolypDataset, get_loader
     logging.basicConfig(filename=snapshot_path + "/log.txt", level=logging.INFO,
                         format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
@@ -29,21 +27,6 @@ def trainer_polyp(args, model, snapshot_path):
     num_classes = args.num_classes
     batch_size = args.batch_size * args.n_gpu
     max_iterations = args.max_iterations
-    # print("alan injam")
-    # db_train = Synapse_dataset(base_dir=args.root_path, list_dir=args.list_dir, split="train",
-    #                            transform=transforms.Compose(
-    #                                [RandomGenerator(output_size=[args.img_size, args.img_size])]))
-
-    # db_train = Polyp_dataset(base_dir=args.root_path, split="train", transform=transforms.Compose(
-    #                                [RandomGenerator(output_size=[args.img_size, args.img_size])]))
-
-    # print("The length of train set is: {}".format(len(db_train)))
-
-    # def worker_init_fn(worker_id):
-    #     random.seed(args.seed + worker_id)
-
-    # trainloader = DataLoader(db_train, batch_size=batch_size, shuffle=True, num_workers=8, pin_memory=True,
-    #                          worker_init_fn=worker_init_fn)
     trainloader = get_loader(args.img_root, args.gt_root, split="train", batchsize=batch_size, trainsize=args.img_size, augmentation=True)
 
     if args.n_gpu > 1:
@@ -66,21 +49,13 @@ def trainer_polyp(args, model, snapshot_path):
             image_batch, label_batch = image_batch.cuda(), label_batch.cuda()
             outputs = model(image_batch)
 
-            # print(outputs.size())
-            # print('image_batch: ', image_batch)                   # torch.Size([16, 3, 224, 224])
-            # print('image_batch_size: ', image_batch.shape)
-            # print('image_batch_type: ', type(image_batch))
-
-
-
             loss_ce = ce_loss(np.squeeze(outputs), np.squeeze(label_batch.long()))
-            # print("ok")
             loss_dice = dice_loss(np.squeeze(outputs), np.squeeze(label_batch.long()), softmax=True)
-            # print("ok 2")
             loss_iou = iou_loss(np.squeeze(outputs), np.squeeze(label_batch.long()), softmax=True)
 
             loss = 0.5 * loss_ce + 0.5 * loss_dice
             # loss = 0.33 * loss_ce + 0.33 * loss_dice + 0.33 * loss_iou  # (this is new line of code)
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -98,22 +73,12 @@ def trainer_polyp(args, model, snapshot_path):
             # logging.info('iteration %d : loss : %f, loss_ce: %f loss_iou: %f' % (iter_num, loss.item(), loss_ce.item(), loss_iou.item()))
 
             if iter_num % 20 == 0:
-                # debug
-                # print(image_batch.shape)  # ([16, 3, 224, 224])
-                # print(image_batch[0].shape)
-                # image = image_batch[1, 0:1, :, :]
-                # image_batch.squeeze(0).permute(1,2,0).detach().cpu().numpy()
-                # image = torch.squeeze(image_batch, dim=0)
-                # print(image.shape)
                 image = image_batch[1, :, :]
-
                 image = (image - image.min()) / (image.max() - image.min())
                 writer.add_image('train/Image', image, iter_num)
                 outputs = torch.argmax(torch.softmax(outputs, dim=1), dim=1, keepdim=True)
                 writer.add_image('train/Prediction', outputs[1, ...] * 50, iter_num)
-                # print("here")
                 labs = label_batch[1, ...] * 50
-                # print("after")
                 writer.add_image('train/GroundTruth', labs, iter_num)
 
         save_interval = 50  # int(max_epoch/6)
@@ -133,24 +98,6 @@ def trainer_polyp(args, model, snapshot_path):
     return "Training Finished!"
 
 
-
-# def inference(args, model, best_performance):
-#     from datasets.dataset_polyp import get_loader
-#     testloader = get_loader(args.img_root, args.gt_root, split="test", batchsize=1, trainsize=args.img_size, augmentation=False)
-#     logging.info("{} test iterations per epoch".format(len(testloader)))
-#     model.eval()
-#     metric_list = 0.0
-#     for i_batch, sampled_batch in enumerate(tqdm(testloader)):
-#         # h, w = sampled_batch["image"].size()[2:]
-#         # image, label, case_name = sampled_batch["image"], sampled_batch["label"], sampled_batch['case_name'][0]
-#         image_batch, label_batch = sampled_batch[0], sampled_batch[1]
-#         metric_i = val_single_volume(image, label, model, classes=args.num_classes, patch_size=[args.img_size, args.img_size],
-#                                       case=case_name, z_spacing=args.z_spacing)
-#         metric_list += np.array(metric_i)
-#     metric_list = metric_list / len(testloader)
-#     performance = np.mean(metric_list, axis=0)
-#     logging.info('Testing performance in val model: mean_dice : %f, best_dice : %f' % (performance, best_performance))
-#     return performance
 
 
 
@@ -174,16 +121,15 @@ def trainer_cascade(args, model, snapshot_path):
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes)
 
-    #optimizer = optim.SGD(model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001)
-    optimizer = optim.AdamW(model.parameters(), lr=base_lr, weight_decay=0.0001)  # AdamW
-    # optimizer = Lion(model.parameters(), lr=base_lr, weight_decay=1e-4)  # Lion
+    # optimizer = optim.SGD(model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001)
+    # optimizer = optim.AdamW(model.parameters(), lr=base_lr, weight_decay=0.0001)  # AdamW
+    optimizer = Lion(model.parameters(), lr=base_lr, weight_decay=1e-4)  # Lion
     
     writer = SummaryWriter(snapshot_path + '/log')
     iter_num = 0
     max_epoch = args.max_epochs
     max_iterations = args.max_epochs * len(trainloader)
     logging.info("{} iterations per epoch. {} max iterations ".format(len(trainloader), max_iterations))
-    # best_performance = 0.0
     iterator = tqdm(range(max_epoch), ncols=70)
     for epoch_num in iterator:
         
@@ -227,28 +173,18 @@ def trainer_cascade(args, model, snapshot_path):
             
             if iter_num % 20 == 0:
                 logging.info('iteration %d, epoch %d : loss : %f, lr: %f' % (iter_num, epoch_num, loss.item(), lr_))
-                # image = image_batch[1, 0:1, :, :]
                 image = image_batch[1, :, :]
                 image = (image - image.min()) / (image.max() - image.min())
                 writer.add_image('train/Image', image, iter_num)
                 outputs = torch.argmax(torch.softmax(outputs, dim=1), dim=1, keepdim=True)
                 writer.add_image('train/Prediction', outputs[1, ...] * 50, iter_num)
-                # labs = label_batch[1, ...].unsqueeze(0) * 50
                 labs = label_batch[1, ...] * 50
                 writer.add_image('train/GroundTruth', labs, iter_num)
      
         
         logging.info('iteration %d, epoch %d : loss : %f, lr: %f' % (iter_num, epoch_num, loss.item(), lr_))
-        # performance = inference(args, model, best_performance)
-
 
         save_interval = 50
-
-        # if(best_performance <= performance):
-        #     best_performance = performance
-        #     save_mode_path = os.path.join(snapshot_path, 'best.pth')
-        #     torch.save(model.state_dict(), save_mode_path)
-        #     logging.info("save model to {}".format(save_mode_path))
             
         if (epoch_num + 1) % save_interval == 0:
             save_mode_path = os.path.join(snapshot_path, 'epoch_' + str(epoch_num) + '.pth')
