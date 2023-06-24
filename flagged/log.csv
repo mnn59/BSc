@@ -1,0 +1,3 @@
+Datasets,image,output,flag,username,timestamp
+Skin,/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/flagged/image/tmp4s7ox3dc.bmp,/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/flagged/output/tmp6gi8obaw.png,correct ✅,,2023-06-10 07:51:38.619173
+Polyp,/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/flagged/image/eb582d94077b9d0bc1f2e429250df3c88a2c159f/tmpq1gskhs7.png,/content/drive/MyDrive/MyTransunet/TransUNet-repo/TransUNet/flagged/output/65c4f6a6fe15854b5e6467ede1f754d279719336/tmpi5vw878_.png,correct ✅,,2023-06-24 17:08:01.950943
